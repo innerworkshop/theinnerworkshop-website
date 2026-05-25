@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Inner Workshop</title>
+  <meta name="description" content="Meet the person behind The Inner Workshop — qualified, experienced and committed to helping you create lasting change." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .about-photo {
+      position: relative;
+    }
+    .about-photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--circle), rgba(184,212,192,0.3));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .photo-placeholder {
+      text-align: center;
+      color: var(--teal);
+      padding: 2rem;
+    }
+    .photo-placeholder .icon { font-size: 4rem; margin-bottom: 1rem; }
+    .photo-placeholder p { font-size: 0.85rem; color: var(--text-mid); }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--teal);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+    .about-badge .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      line-height: 1;
+      display: block;
+    }
+    .about-badge span { font-size: 0.75rem; letter-spacing: 0.05em; }
+
+    .quals-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .quals-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--circle);
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+    .quals-list li:last-child { border-bottom: none; }
+    .quals-list .tick {
+      color: var(--teal);
+      font-size: 1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .value-card {
+      padding: 1.8rem;
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      background: var(--white);
+    }
+    .value-card .val-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .value-card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="The Inner Workshop logo" />
+        <span>The Inner Workshop</span>
+      </a>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="costs.html">Costs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label">About</span>
+      <h1>The Person Behind the Work</h1>
+      <div class="divider"></div>
+      <p>Qualified, experienced, and genuinely invested in helping you find the tools that make a real difference.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo fade-in">
+          <div class="about-photo-frame" style="background:none;">
+            <img src="images/sarah.jpg" alt="The Inner Workshop — Sarah" style="width:100%;height:100%;object-fit:cover;border-radius:20px;" />
+          </div>
+          <div class="about-badge">
+            <strong class="num">25+</strong>
+            <span>Years Experience</span>
+          </div>
+        </div>
+
+        <div class="about-text fade-in">
+          <span class="section-label">Hello, I'm Sarah Cox CHt, Level 7 Dip.SpLD</span>
+          <h2>Bridging education, therapy and lasting change</h2>
+          <div class="divider" style="margin: 1.2rem 0;"></div>
+          <p>With over 25 years of experience supporting children and young adults with their learning and wellbeing, I bring a rare depth of understanding to my therapeutic practice. My career in education — including specialist work in Specific Learning Difficulties and a current role as Head of Learning Support in a pre-prep school — has given me profound insight into how children think, feel, and learn.</p>
+          <p>Now, I am channelling that expertise into a new and exciting direction. As a Certified Hypnotherapist, Rapid Transformational Therapy (RTT) Practitioner, and Emotional Freedom Technique (EFT) Practitioner, I work with children, teens, and adults to help them overcome stress, anxiety, low self-esteem, and limiting beliefs — equipping them with lasting tools for emotional regulation and inner resilience.</p>
+          <p>My approach is rooted in an understanding of the subconscious mind and the profound impact it has on how we feel and function. By bridging the worlds of education and therapy, I offer a uniquely holistic perspective — one that supports not just academic progress, but genuine emotional wellbeing.</p>
+          <p>I am also deeply passionate about supporting teachers, education professionals, and parents with their own emotional regulation and mental health, recognising that regulated adults are better equipped to nurture and support the children in their care.</p>
+
+          <h3 style="margin-top:2rem; margin-bottom:0.5rem;">Qualifications & Training</h3>
+          <ul class="quals-list">
+            <li><span class="tick">✓</span> Certified Hypnotherapist (CHt)</li>
+            <li><span class="tick">✓</span> Rapid Transformational Therapy (RTT) Practitioner — trained by Marisa Peer</li>
+            <li><span class="tick">✓</span> Emotional Freedom Technique (EFT) Practitioner — EFT and Mindfulness Centre</li>
+            <li><span class="tick">✓</span> Level 7 Diploma in Specific Learning Difficulties & Dyslexia (SpLD/Dyslexia)</li>
+            <li><span class="tick">✓</span> Specialist Teacher — Specific Learning Difficulties</li>
+            <li><span class="tick">✓</span> Head of Learning Support, Pre-Prep School</li>
+            <li><span class="tick">✓</span> Professional Indemnity Insurance — Balens Specialist Insurance Brokers</li>
+            <li><span class="tick">✓</span> Registered with the Information Commissioner's Office (ICO)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="highlight-band" style="background-image:url('images/heart-hands.jpg');background-size:cover;background-position:center;position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(245,240,232,0.88);"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <blockquote>"My approach is always practical first. Understanding why we feel things is important — but what matters most is that you leave with something you can actually use."</blockquote>
+    </div>
+  </div>
+
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">My Values</span>
+        <h2>What Guides My Work</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card fade-in">
+          <div class="val-icon">🌱</div>
+          <h3>Safety First</h3>
+          <p>Every session is a space where you can be honest without fear of judgment. Safety isn't a luxury — it's the foundation of real change.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="val-icon">🔧</div>
+          <h3>Practical Over Theoretical</h3>
+          <p>Understanding is only half the work. I focus on giving you tools you can use in real life, not just concepts to think about.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="val-icon">🤝</div>
+          <h3>Collaborative</h3>
+          <p>You're the expert on your own life. My role is to work alongside you, not tell you what to do or how to feel.</p>
+        </div>
+        <div class="value-card fade-in">
+          <div class="val-icon">🎯</div>
+          <h3>Evidence-Based</h3>
+          <p>Everything I use is grounded in research and clinical practice — no pseudoscience, no generic wellness platitudes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align:center;">
+    <div class="container">
+      <span class="section-label">Ready to Begin?</span>
+      <h2>Let's Work Together</h2>
+      <div class="divider"></div>
+      <p style="max-width:500px;margin:0 auto 2rem;">There's no obligation and no pressure. Your first session is simply a chance to meet, talk, and see if we're a good fit.</p>
+      <a href="book.html" class="btn-primary">Book a Session</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="The Inner Workshop" style="width:40px;filter:brightness(0.8);" />
+            <span>The Inner Workshop</span>
+          </a>
+          <p>Practical tools for lasting change. Supporting adults, parents, teachers and young people across the UK.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="costs.html">Costs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="book.html">Book a Session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></li>
+            <li><a href="book.html">Book online</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Inner Workshop. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

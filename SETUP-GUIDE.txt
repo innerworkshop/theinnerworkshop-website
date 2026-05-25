@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costs & Investment — The Inner Workshop</title>
+  <meta name="description" content="Session prices for EFT tapping, RTT hypnotherapy and Reiki with The Inner Workshop." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .costs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .cost-card {
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .cost-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow); }
+    .cost-card-header {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      padding: 1.8rem 2rem;
+      color: var(--white);
+    }
+    .cost-card-header.sage {
+      background: linear-gradient(135deg, var(--sage), var(--sage-light));
+    }
+    .cost-card-header.soft {
+      background: linear-gradient(135deg, rgba(184,212,192,0.6), rgba(91,143,168,0.3));
+    }
+    .cost-card-header h2 { color: var(--white); font-size: 1.6rem; margin-bottom: 0.25rem; }
+    .cost-card-header.soft h2 { color: var(--teal-dark); }
+    .cost-card-header p { color: rgba(255,255,255,0.85); font-size: 0.85rem; margin: 0; }
+    .cost-card-header.soft p { color: var(--text-mid); }
+    .cost-card-body { padding: 2rem; }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--circle);
+      gap: 1rem;
+    }
+    .price-row:last-of-type { border-bottom: none; }
+    .price-label { font-size: 0.92rem; color: var(--text-mid); flex: 1; }
+    .price-label strong { display: block; color: var(--text-dark); margin-bottom: 0.15rem; }
+    .price-label span { font-size: 0.82rem; color: var(--text-light); }
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--teal);
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    .how-many {
+      background: rgba(184,212,192,0.15);
+      border: 1px solid var(--circle);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .how-many h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--teal-dark);
+      margin-bottom: 0.5rem;
+    }
+    .how-many p { font-size: 0.88rem; margin: 0; }
+
+    .includes-box {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--circle);
+      padding-top: 1.5rem;
+    }
+    .includes-box h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--teal-dark);
+      margin-bottom: 0.75rem;
+    }
+    .includes-list { list-style: none; }
+    .includes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.4rem 0;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(184,212,192,0.35);
+    }
+    .includes-list li:last-child { border-bottom: none; }
+    .tick { color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+
+    .reiki-note {
+      background: rgba(184,212,192,0.1);
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .reiki-note .icon { font-size: 2.5rem; }
+    .reiki-note h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .reiki-note p { font-size: 0.92rem; margin-bottom: 0; }
+    @media (max-width: 600px) { .reiki-note { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="The Inner Workshop logo" />
+        <span>The Inner Workshop</span>
+      </a>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="costs.html">Costs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label">Investment</span>
+      <h1>Costs & Session Fees</h1>
+      <div class="divider"></div>
+      <p>Transparent pricing for all services. If you have any questions or would like to discuss your options before booking, please <a href="contact.html">get in touch</a>.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="costs-grid">
+
+        <!-- EFT -->
+        <div class="cost-card fade-in">
+          <div class="cost-card-header">
+            <h2>EFT Tapping</h2>
+            <p>Emotional Freedom Technique — all ages</p>
+          </div>
+          <div class="cost-card-body">
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Adult</strong>
+                <span>Full session · approx. 1 hour</span>
+              </div>
+              <div class="price-amount">£70</div>
+            </div>
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Child (up to age 12)</strong>
+                <span>Full session · approx. 30 minutes</span>
+              </div>
+              <div class="price-amount">£45</div>
+            </div>
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Teen (age 13–18)</strong>
+                <span>Full session · approx. 45 minutes</span>
+              </div>
+              <div class="price-amount">£55</div>
+            </div>
+
+            <div class="how-many">
+              <h4>How many sessions will I need?</h4>
+              <p>This varies from person to person. Those who haven't had the issue for long, or who have good insight into it, may only need a few sessions. On average, clients have between 3 and 6 sessions. Following any suggestions between sessions will help speed up the process.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RTT -->
+        <div class="cost-card fade-in">
+          <div class="cost-card-header sage">
+            <h2>RTT® Hypnotherapy</h2>
+            <p>Rapid Transformational Therapy — adults & young people</p>
+          </div>
+          <div class="cost-card-body">
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Initial Adult Session</strong>
+                <span>Full session · 90 minutes to 2 hours</span>
+              </div>
+              <div class="price-amount">£175</div>
+            </div>
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Follow-up Adult Sessions</strong>
+                <span>Subsequent sessions · 1–1.5 hours</span>
+              </div>
+              <div class="price-amount">£125</div>
+            </div>
+            <div class="price-row">
+              <div class="price-label">
+                <strong>Child / Teen (ages 8–18)</strong>
+                <span>Full session · approx. 1 hour</span>
+              </div>
+              <div class="price-amount">£100</div>
+            </div>
+
+            <div class="includes-box">
+              <h4>Your initial adult session includes:</h4>
+              <ul class="includes-list">
+                <li><span class="tick">✓</span> <strong>30 min intake conversation</strong> — we dive into your needs and what you want to transform, tailoring the session for maximum impact</li>
+                <li><span class="tick">✓</span> <strong>60–90 min hypnosis session</strong> — accessing your subconscious mind, uncovering root causes and creating lasting transformation</li>
+                <li><span class="tick">✓</span> <strong>Personalised audio recording</strong> (~15 mins) — a bespoke recording to listen to daily for 21 days, supporting the reprogramming work done in session</li>
+                <li><span class="tick">✓</span> <strong>Weekly follow-up for 3 weeks</strong> — a check-in by text or short call (max. 15 mins) so you're supported after your session</li>
+              </ul>
+              <p style="font-size:0.82rem;color:var(--text-light);margin-top:0.75rem;margin-bottom:0;">I often integrate EFT/tapping as an additional tool within RTT sessions where appropriate.</p>
+            </div>
+
+            <div class="includes-box">
+              <h4>Child/teen sessions (ages 8–18) include:</h4>
+              <ul class="includes-list">
+                <li><span class="tick">✓</span> Introduction to mindfulness and grounding techniques</li>
+                <li><span class="tick">✓</span> The importance of positive self-talk</li>
+                <li><span class="tick">✓</span> A short, bespoke meditation recording</li>
+              </ul>
+            </div>
+
+            <div class="how-many">
+              <h4>How many sessions will I need?</h4>
+              <p>Some clients find that one session is sufficient to see meaningful change. Where it isn't, we can schedule a 2nd and/or 3rd session. It is extremely rare that more than 3 sessions are needed.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Reiki — presented as a gentle add-on -->
+      <div class="reiki-note fade-in">
+        <div class="icon">✨</div>
+        <div>
+          <h3>Reiki — a complementary addition</h3>
+          <p>Reiki is available as a gentle, optional complement to your therapeutic work. It offers a chance to completely switch off, calm your nervous system, release tension, and deeply relax in a peaceful healing space. Many clients find it a wonderful way to support the emotional work done in EFT or RTT sessions — though it is equally available as a standalone treatment.</p>
+          <p style="margin-top:0.75rem;margin-bottom:0;"><strong style="color:var(--teal-dark);">1 hour Reiki session: £60</strong> &nbsp;·&nbsp; <a href="services.html#reiki">Learn more about Reiki →</a></p>
+        </div>
+      </div>
+
+      <!-- Receipts note -->
+      <div style="background:var(--white);border:1px solid var(--circle);border-left:4px solid var(--teal);border-radius:12px;padding:1.5rem 2rem;margin-top:2rem;" class="fade-in">
+        <h3 style="font-size:1.15rem;margin-bottom:0.5rem;">🧾 Receipts & Medicash</h3>
+        <p style="font-size:0.92rem;margin-bottom:0.4rem;">A professional receipt can be provided after every session — suitable for Medicash and other healthcare cash plans.</p>
+        <p style="font-size:0.88rem;color:var(--text-light);margin-bottom:0;">Simply request a receipt when booking or by emailing <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a> after your session. Your receipt will include your name, date, type of treatment, amount paid and my professional details.</p>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="book.html" class="btn-primary" style="margin-right:1rem;">Book a Session</a>
+        <a href="contact.html" class="btn-secondary">Ask a Question</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="The Inner Workshop" style="width:40px;filter:brightness(0.8);" />
+            <span>The Inner Workshop</span>
+          </a>
+          <p>Practical tools for lasting change. Supporting adults, parents, teachers and young people across the UK.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="costs.html">Costs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="book.html">Book a Session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="safeguarding.html">Safeguarding Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Inner Workshop. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="safeguarding.html">Safeguarding</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

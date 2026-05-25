@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — The Inner Workshop</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-info { position: sticky; top: 90px; }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--circle);
+    }
+    .contact-detail:last-child { border-bottom: none; }
+    .contact-detail .icon {
+      width: 42px; height: 42px;
+      background: rgba(184,212,192,0.3);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-detail h4 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.2rem; font-family: 'Jost', sans-serif; }
+    .contact-detail p, .contact-detail a { font-size: 0.95rem; margin: 0; color: var(--text-mid); }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--circle);
+      border-radius: 10px;
+      background: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { min-height: 140px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-submit {
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem 2.5rem;
+      border-radius: 30px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+    .privacy-note { font-size: 0.8rem; color: var(--text-light); margin-top: 0.75rem; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="The Inner Workshop logo" />
+        <span>The Inner Workshop</span>
+      </a>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="costs.html">Costs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h1>Get in Touch</h1>
+      <div class="divider"></div>
+      <p>Whether you have a question, want to find out if a service is right for you, or are ready to book — I'd love to hear from you. There's no pressure and no obligation.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info fade-in">
+          <div class="contact-detail">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">📅</div>
+            <div>
+              <h4>Book Online</h4>
+              <a href="book.html">View available times →</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">💻</div>
+            <div>
+              <h4>Online Sessions</h4>
+              <p>EFT & hypnotherapy available via Zoom, anywhere in the UK</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">📍</div>
+            <div>
+              <h4>In Person</h4>
+              <p>Surrey, UK</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">⏱️</div>
+            <div>
+              <h4>Response Time</h4>
+              <p>I aim to reply to all messages within 48 hours</p>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:rgba(184,212,192,0.15);border:1px solid var(--circle);border-radius:16px;">
+            <p style="font-size:0.88rem;color:var(--text-mid);margin:0;font-style:italic;">"There is no such thing as a silly question. If something is holding you back from reaching out, please don't let it. A short conversation is often all it takes."</p>
+          </div>
+        </div>
+
+        <div class="form-card fade-in">
+          <h3 style="margin-bottom:1.5rem;">Send a Message</h3>
+          <!-- NOTE: To make this form work, connect it to a form service such as
+               Netlify Forms (free), Formspree, or EmailJS.
+               For Netlify Forms: add  data-netlify="true"  to the <form> tag below. -->
+          <form name="contact" data-netlify="true" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="[Your name]" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="enquiry">What are you enquiring about?</label>
+              <select id="enquiry" name="enquiry">
+                <option value="">Select an option...</option>
+                <option>EFT / Tapping</option>
+                <option>Hypnotherapy (RTT)</option>
+                <option>Reiki</option>
+                <option>Sessions for a child or teenager</option>
+                <option>Parent guidance</option>
+                <option>School or organisation training</option>
+                <option>General question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for, or just say hello..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <p class="privacy-note">Your message is confidential. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="The Inner Workshop" style="width:40px;filter:brightness(0.8);" />
+            <span>The Inner Workshop</span>
+          </a>
+          <p>Practical tools for lasting change. Supporting adults, parents, teachers and young people across the UK.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="costs.html">Costs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="book.html">Book a Session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></li>
+            <li><a href="book.html">Book online</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Inner Workshop. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
