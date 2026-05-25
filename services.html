@@ -3,90 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — The Inner Workshop</title>
+  <title>Services — The Inner Workshop</title>
+  <meta name="description" content="EFT tapping, RTT hypnotherapy, and Reiki for adults, children, adolescents, parents and teachers." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-
-    .contact-info { position: sticky; top: 90px; }
-    .contact-detail {
+    /* ---- SERVICE NAV TABS ---- */
+    .service-tabs {
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--circle);
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2.5rem 0 0;
     }
-    .contact-detail:last-child { border-bottom: none; }
-    .contact-detail .icon {
-      width: 42px; height: 42px;
-      background: rgba(184,212,192,0.3);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .contact-detail h4 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.2rem; font-family: 'Jost', sans-serif; }
-    .contact-detail p, .contact-detail a { font-size: 0.95rem; margin: 0; color: var(--text-mid); }
-
-    .form-card {
+    .tab-btn {
       background: var(--white);
       border: 1px solid var(--circle);
-      border-radius: 20px;
-      padding: 2.5rem;
-    }
-    .form-group { margin-bottom: 1.4rem; }
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: var(--text-mid);
-      margin-bottom: 0.4rem;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--circle);
-      border-radius: 10px;
-      background: var(--cream);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      transition: border-color 0.3s;
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--teal); }
-    .form-group textarea { min-height: 140px; resize: vertical; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
-
-    .form-submit {
-      background: var(--teal);
-      color: var(--white);
-      border: none;
-      padding: 0.85rem 2.5rem;
+      padding: 0.55rem 1.3rem;
       border-radius: 30px;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      cursor: pointer;
       font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
+      transition: all 0.25s;
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+
+    /* ---- SERVICE SECTIONS ---- */
+    .service-section { padding: 4rem 0; border-bottom: 1px solid var(--circle); }
+    .service-section:last-of-type { border-bottom: none; }
+
+    .service-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 768px) { .service-header { grid-template-columns: 1fr; gap: 2rem; } }
+
+    .service-visual {
+      background: linear-gradient(135deg, rgba(184,212,192,0.25), rgba(91,143,168,0.08));
+      border: 1px solid var(--circle);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 90px;
+    }
+    .service-visual .big-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+    .service-visual h3 { margin-bottom: 0.3rem; }
+    .service-visual .sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.2rem; }
+
+    .age-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.2rem; }
+    .age-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid var(--circle);
+      color: var(--teal);
+    }
+
+    .service-tag {
+      display: inline-block;
+      background: rgba(58,138,154,0.08);
+      color: var(--teal);
+      font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 0.9rem;
     }
-    .form-submit:hover { background: var(--teal-dark); transform: translateY(-2px); }
 
-    .privacy-note { font-size: 0.8rem; color: var(--text-light); margin-top: 0.75rem; text-align: center; }
+    .includes-list { list-style: none; margin: 1.2rem 0 1.8rem; }
+    .includes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(184,212,192,0.4);
+      font-size: 0.93rem;
+      color: var(--text-mid);
+    }
+    .includes-list li:last-child { border-bottom: none; }
+    .tick { color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+
+    /* ---- TECHNIQUE BOX ---- */
+    .technique-box {
+      background: rgba(184,212,192,0.12);
+      border: 1px solid var(--circle);
+      border-left: 3px solid var(--teal);
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.5rem 0;
+    }
+    .technique-box h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--teal-dark);
+      margin-bottom: 0.6rem;
+    }
+    .technique-box p { font-size: 0.92rem; margin-bottom: 0; }
+
+    /* ---- TAPPING POINTS ---- */
+    .tapping-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.6rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .tap-point {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 10px;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+    .tap-point .dot {
+      width: 8px; height: 8px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ---- CHILDREN SECTION ---- */
+    .children-band {
+      background: linear-gradient(135deg, rgba(184,212,192,0.18), rgba(245,240,232,0.5));
+      border-top: 1px solid var(--circle);
+      border-bottom: 1px solid var(--circle);
+      padding: 4rem 0;
+    }
+    .children-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .child-card {
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      padding: 1.6rem;
+    }
+    .child-card .age-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .child-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .child-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+    .parent-note {
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .parent-note h3 { margin-bottom: 0.75rem; }
+
+    /* ---- FAQ ---- */
+    .faq-item { border-bottom: 1px solid var(--circle); padding: 1.3rem 0; }
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--teal-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-a { color: var(--text-mid); padding-top: 0.7rem; font-size: 0.92rem; display: none; line-height: 1.7; }
+    .faq-a.open { display: block; }
   </style>
 </head>
 <body>
@@ -112,100 +213,312 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="container">
-      <span class="section-label">Contact</span>
-      <h1>Get in Touch</h1>
+      <span class="section-label">Services</span>
+      <h1>Not One Size Fits All</h1>
       <div class="divider"></div>
-      <p>Whether you have a question, want to find out if a service is right for you, or are ready to book — I'd love to hear from you. There's no pressure and no obligation.</p>
+      <p>Every person is different. I draw on a range of evidence-informed approaches — EFT, hypnotherapy, and Reiki — to create something that genuinely fits you, your age, your needs, and where you are right now.</p>
+      <div class="service-tabs">
+        <button class="tab-btn active" onclick="scrollTo('eft')">EFT Tapping</button>
+        <button class="tab-btn" onclick="scrollTo('hypnotherapy')">Hypnotherapy</button>
+        <button class="tab-btn" onclick="scrollTo('reiki')">Reiki (Complementary)</button>
+        <button class="tab-btn" onclick="scrollTo('children')">Working with Children</button>
+        <button class="tab-btn" onclick="scrollTo('faq')">FAQs</button>
+      </div>
     </div>
   </div>
 
-  <section>
+  <!-- ===================== EFT ===================== -->
+  <div class="service-section" id="eft">
     <div class="container">
-      <div class="contact-grid">
-
-        <div class="contact-info fade-in">
-          <div class="contact-detail">
-            <div class="icon">✉️</div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a>
+      <div class="service-header">
+        <div class="service-visual fade-in" style="padding:0;overflow:hidden;">
+          <img src="images/butterfly.jpg" alt="Teal butterfly — transformation" style="width:100%;height:220px;object-fit:cover;border-radius:20px 20px 0 0;" />
+          <div style="padding:1.5rem;">
+            <h3>Emotional Freedom Technique</h3>
+            <p class="sub">EFT · "Tapping"</p>
+            <div class="age-badges">
+              <span class="age-badge">Children</span>
+              <span class="age-badge">Teens</span>
+              <span class="age-badge">Adults</span>
             </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">📅</div>
-            <div>
-              <h4>Book Online</h4>
-              <a href="book.html">View available times →</a>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">💻</div>
-            <div>
-              <h4>Online Sessions</h4>
-              <p>EFT & hypnotherapy available via Zoom, anywhere in the UK</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">📍</div>
-            <div>
-              <h4>In Person</h4>
-              <p>Surrey, UK</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">⏱️</div>
-            <div>
-              <h4>Response Time</h4>
-              <p>I aim to reply to all messages within 48 hours</p>
-            </div>
-          </div>
-
-          <div style="margin-top:2rem;padding:1.5rem;background:rgba(184,212,192,0.15);border:1px solid var(--circle);border-radius:16px;">
-            <p style="font-size:0.88rem;color:var(--text-mid);margin:0;font-style:italic;">"There is no such thing as a silly question. If something is holding you back from reaching out, please don't let it. A short conversation is often all it takes."</p>
+            <p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:1.2rem;">In person or online · Sessions from 50 mins</p>
+            <a href="book.html" class="btn-primary" style="font-size:0.8rem;">Book a Session</a>
           </div>
         </div>
 
-        <div class="form-card fade-in">
-          <h3 style="margin-bottom:1.5rem;">Send a Message</h3>
-          <!-- NOTE: To make this form work, connect it to a form service such as
-               Netlify Forms (free), Formspree, or EmailJS.
-               For Netlify Forms: add  data-netlify="true"  to the <form> tag below. -->
-          <form name="contact" data-netlify="true" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="[Your name]" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="enquiry">What are you enquiring about?</label>
-              <select id="enquiry" name="enquiry">
-                <option value="">Select an option...</option>
-                <option>EFT / Tapping</option>
-                <option>Hypnotherapy (RTT)</option>
-                <option>Reiki</option>
-                <option>Sessions for a child or teenager</option>
-                <option>Parent guidance</option>
-                <option>School or organisation training</option>
-                <option>General question</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Tell me a little about what you're looking for, or just say hello..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message</button>
-            <p class="privacy-note">Your message is confidential. Read our <a href="privacy.html">Privacy Policy</a>.</p>
-          </form>
-        </div>
+        <div class="fade-in">
+          <span class="service-tag">EFT · Tapping</span>
+          <h2>A gentle, practical tool you can use for life</h2>
+          <p>Emotional Freedom Technique — commonly known as EFT or tapping — is a gentle, non-invasive practice that combines elements of acupressure and psychology. By tapping on specific points on the body while focusing on a thought, feeling or memory, it helps to reduce the emotional intensity around it — often quickly and durably.</p>
+          <p>EFT is one of the most versatile tools I use. Its application shifts depending on who I'm working with — a young child, a teenager, or an adult — but the underlying principle is the same: giving you a concrete, body-based technique you can use independently, whenever you need it.</p>
+          <p>Children often respond to EFT faster than adults. With fewer preconceived ideas and less accumulated emotional weight, they tend to shift quickly. With younger children I frequently turn tapping into a game, and for very young children it can be adapted to use on a stuffed animal, or I can tap on their behalf — a practice known as surrogate tapping.</p>
+          <p>For teenagers, tapping offers something particularly valuable: an active, physical tool they can use on their own. It directly addresses the desire for independence and self-sufficiency that defines adolescence — giving them something real they can reach for under pressure.</p>
+          <p>For adults, EFT can reach into deeper layers — processing trauma, hidden memories, phobias, chronic stress, grief, pain, and anxiety — in a way that feels manageable rather than overwhelming.</p>
 
+          <ul class="includes-list">
+            <li><span class="tick">✓</span> Suitable for all ages — children, teens, adults</li>
+            <li><span class="tick">✓</span> Available in person or online</li>
+            <li><span class="tick">✓</span> You leave every session with tools you can use yourself</li>
+            <li><span class="tick">✓</span> Adapted to your developmental stage and individual needs</li>
+            <li><span class="tick">✓</span> Surrogate tapping available for young children</li>
+          </ul>
+        </div>
       </div>
+
+      <!-- Technique explanation -->
+      <div class="technique-box fade-in">
+        <h4>How the Technique Works</h4>
+        <p>EFT works by stimulating specific acupressure points on the face and body through gentle tapping, while simultaneously holding a thought, feeling or memory in mind. This combination appears to send a calming signal to the amygdala — the brain's threat-response centre — reducing the emotional charge attached to that thought or memory. Research by scientists including Dr Peta Stapleton and Dr Dawson Church has demonstrated measurable reductions in cortisol (the stress hormone) and changes in brain activity following EFT. A typical sequence involves a setup statement (acknowledging the issue while offering self-acceptance), followed by tapping through a series of points while speaking to the feeling or belief.</p>
+      </div>
+
+      <h3 style="margin-bottom:1rem;">The Tapping Points</h3>
+      <div class="tapping-points">
+        <div class="tap-point"><div class="dot"></div>Side of the hand (karate chop)</div>
+        <div class="tap-point"><div class="dot"></div>Top of the head</div>
+        <div class="tap-point"><div class="dot"></div>Eyebrow</div>
+        <div class="tap-point"><div class="dot"></div>Side of the eye</div>
+        <div class="tap-point"><div class="dot"></div>Under the eye</div>
+        <div class="tap-point"><div class="dot"></div>Under the nose</div>
+        <div class="tap-point"><div class="dot"></div>Chin</div>
+        <div class="tap-point"><div class="dot"></div>Collarbone</div>
+        <div class="tap-point"><div class="dot"></div>Under the arm</div>
+      </div>
+
+      <!-- Infographic placeholder + link -->
+      <div style="background:var(--white);border:1px dashed var(--circle);border-radius:16px;padding:2rem;text-align:center;margin:1.5rem 0;">
+        <p style="color:var(--text-light);font-size:0.85rem;margin-bottom:0.5rem;">[Your Canva infographic goes here — export as PNG and replace this placeholder]</p>
+        <p style="margin:0;font-size:0.9rem;">Want to understand the science behind tapping? <a href="https://energytapping.com/how-tapping-works-infographic/" target="_blank" rel="noopener">Read the research infographic by Dr David Feinstein →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HYPNOTHERAPY ===================== -->
+  <div class="service-section" id="hypnotherapy" style="background:var(--white);">
+    <div class="container">
+
+      <div class="service-header">
+        <div class="service-visual fade-in">
+          <img src="images/rtt-badge.png" alt="RTT Rapid Transformational Practitioner" style="width:180px;margin:0 auto 1.5rem;" />
+          <img src="images/rtt-logo.png" alt="RTT Rapid Transformational Practitioner Logo" style="width:220px;margin:0 auto 1.5rem;" />
+          <div class="age-badges" style="justify-content:center;">
+            <span class="age-badge">Teens 12+</span>
+            <span class="age-badge">Adults</span>
+          </div>
+          <p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:0.5rem;">In person or online · 90 min (adults) · 45 min (teens)</p>
+          <a href="book.html" class="btn-primary" style="font-size:0.8rem;margin-top:1rem;">Book a Session</a>
+        </div>
+
+        <div class="fade-in">
+          <span class="section-label">RTT Hypnotherapy</span>
+          <h2>Rapid Transformational Therapy</h2>
+          <div class="divider" style="margin:1rem 0;"></div>
+          <p>Rapid Transformational Therapy (RTT) is a pioneering therapeutic approach developed by Marisa Peer over 30 years of clinical practice. It combines the most effective principles of hypnotherapy, psychotherapy, NLP, CBT, and regression work into a structured method designed to create deep, lasting change — often more quickly than traditional talking therapies.</p>
+          <p>RTT works by accessing the subconscious mind — where our beliefs, emotional patterns, and automatic responses are stored. In a session, you enter a deeply relaxed, focused state that allows us to go beneath the surface and identify the root causes of what you're experiencing. Rather than simply managing symptoms, we work to understand and reframe the beliefs formed earlier in life that are driving current patterns and behaviours.</p>
+          <p>Each session includes a personalised transformation recording — a bespoke audio created specifically for you — which you listen to daily for 21 days after your session. This reinforces the new beliefs and perspectives at a subconscious level, supporting lasting neurological change.</p>
+
+          <div class="technique-box" style="margin:1.5rem 0;">
+            <h4>What makes RTT different</h4>
+            <p>Unlike traditional hypnotherapy which often focuses on symptom management through suggestion alone, RTT goes to the root cause. It combines regression, reframing, and powerful suggestion work to change not just how you feel, but how you see yourself — your identity, your beliefs, and your sense of what's possible for you.</p>
+          </div>
+
+          <ul class="includes-list">
+            <li><span class="tick">✓</span> Confidence and self-worth</li>
+            <li><span class="tick">✓</span> Anxiety, stress and overwhelm</li>
+            <li><span class="tick">✓</span> Fears, phobias and panic</li>
+            <li><span class="tick">✓</span> Habits, compulsions and unwanted behaviours</li>
+            <li><span class="tick">✓</span> Performance blocks — exam stress, public speaking, sport</li>
+            <li><span class="tick">✓</span> Grief, loss and life transitions</li>
+            <li><span class="tick">✓</span> Identity and limiting beliefs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;" class="fade-in">
+        <div>
+          <h3 style="margin-bottom:1rem;">What to Expect</h3>
+          <ul class="includes-list">
+            <li><span class="tick">✓</span> Initial consultation to understand your goals</li>
+            <li><span class="tick">✓</span> Sessions tailored to your needs and personality</li>
+            <li><span class="tick">✓</span> Personalised bespoke audio recording included</li>
+            <li><span class="tick">✓</span> Available in person or online</li>
+            <li><span class="tick">✓</span> Adults: 90 minute sessions</li>
+            <li><span class="tick">✓</span> Teens (12–19): 45 minute sessions</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom:1rem;">Important to Know</h3>
+          <ul class="includes-list">
+            <li><span class="tick">✓</span> Direct hypnotherapy sessions from age 10+</li>
+            <li><span class="tick">✓</span> Under 10s: EFT and bespoke relaxation audios</li>
+            <li><span class="tick">✓</span> If your child sees a psychiatrist, please check for contraindications before booking</li>
+            <li><span class="tick">✓</span> Not recommended alongside concurrent therapy</li>
+            <li><span class="tick">✓</span> If taking medication for mental health, please check with your prescriber first</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="book.html" class="btn-primary">Book an RTT Session</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== REIKI ===================== -->
+  <div class="service-section" id="reiki">
+    <div class="container">
+      <div class="service-header">
+        <div class="service-visual fade-in" style="padding:0;overflow:hidden;">
+          <img src="images/golden-grass.jpg" alt="Golden light — calm and restoration" style="width:100%;height:220px;object-fit:cover;border-radius:20px 20px 0 0;" />
+          <div style="padding:1.5rem;">
+            <h3>Reiki</h3>
+            <p class="sub">Energy healing · All ages</p>
+            <div class="age-badges">
+              <span class="age-badge">Children</span>
+              <span class="age-badge">Teens</span>
+              <span class="age-badge">Adults</span>
+            </div>
+            <p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:0.5rem;">In person · 60 minutes</p>
+            <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:1.2rem;">No particular beliefs required</p>
+            <a href="book.html" class="btn-primary" style="font-size:0.8rem;">Book a Session</a>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <span class="service-tag">Complementary Therapy</span>
+          <h2>Reiki — a gentle addition to your practice</h2>
+          <p>Reiki is available as an optional, complementary addition to therapeutic work — or as a standalone treatment for those who simply want to deeply rest and restore. It is not a core part of every client's journey, but for those who feel drawn to it, it can be a beautifully calming support alongside EFT or RTT work. A session lasts one hour. You lie fully clothed on a treatment table while I place my hands gently on or just above specific areas of the body, focusing on the main energy centres. There is no massage and no physical pressure whatsoever.</p>
+          <p>I often use relaxing music and essential oils to support the experience, though this is entirely your choice — sessions are always adapted to your comfort and preferences.</p>
+          <p>Most people feel a deep sense of calm during a session. Some notice warmth, a gentle tingling, or simply drift into a light, peaceful sleep. Reiki does not require any particular spiritual belief — many of my clients are entirely sceptical beforehand and simply experience it as a deeply restorative treatment that leaves them feeling calmer, lighter, and more balanced.</p>
+          <p>Because it is so gentle and non-invasive, Reiki is safe and suitable for all ages — including young children. Within my practice, I often use it as a way of helping clients feel settled and regulated before or alongside deeper therapeutic work. A calmer nervous system makes everything else more accessible.</p>
+
+          <ul class="includes-list">
+            <li><span class="tick">✓</span> Safe and suitable for all ages</li>
+            <li><span class="tick">✓</span> Non-invasive — no massage, no pressure</li>
+            <li><span class="tick">✓</span> No particular beliefs or experience required</li>
+            <li><span class="tick">✓</span> Can be used standalone or alongside other sessions</li>
+            <li><span class="tick">✓</span> Music and aromatherapy available (your choice)</li>
+            <li><span class="tick">✓</span> 60 minute sessions, in person</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WORKING WITH CHILDREN ===================== -->
+  <div class="children-band" id="children">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">Children & Young People</span>
+        <h2>A Note for Parents</h2>
+        <div class="divider"></div>
+        <p>I have spent more than 25 years working with children and young people as a teacher, dyslexia specialist, and SENDCo. This isn't a sideline — it is the heart of my work. Every technique I use with children is carefully adapted to their developmental stage, and my goal is always the same: to leave them with tools they understand, trust, and can use on their own.</p>
+      </div>
+
+      <div class="children-grid">
+        <div class="child-card fade-in" style="padding:0;overflow:hidden;">
+          <div style="height:140px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.15));display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.75rem;color:var(--text-light);padding:1rem;border-bottom:1px solid var(--circle);">
+            📷 Add photo of young child (age 4–9)<br><span style="font-size:0.68rem;">Unsplash: search "happy young child"</span>
+          </div>
+          <div style="padding:1.5rem;">
+            <span class="age-label">Ages 4–9</span>
+            <h3>Young Children</h3>
+            <p>For younger children I use EFT (often as a playful game), surrogate tapping, Reiki, and bespoke relaxation audios. Hypnotherapy is not used directly at this age — instead, the focus is on gentle nervous system regulation and building emotional vocabulary in ways that feel natural and fun.</p>
+          </div>
+        </div>
+        <div class="child-card fade-in" style="padding:0;overflow:hidden;">
+          <div style="height:140px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.15));display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.75rem;color:var(--text-light);padding:1rem;border-bottom:1px solid var(--circle);">
+            📷 Add your therapy session photo (pre-teen)<br><span style="font-size:0.68rem;">Your own photo goes here</span>
+          </div>
+          <div style="padding:1.5rem;">
+            <span class="age-label">Ages 10–11</span>
+            <h3>Pre-Teens</h3>
+            <p>From age 10, hypnotherapy sessions become appropriate alongside EFT and Reiki. Sessions are 30 minutes, structured around imagination and guided visualisation — an approach children at this age engage with naturally and enthusiastically.</p>
+          </div>
+        </div>
+        <div class="child-card fade-in" style="padding:0;overflow:hidden;">
+          <div style="height:140px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.15));display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.75rem;color:var(--text-light);padding:1rem;border-bottom:1px solid var(--circle);">
+            📷 Add photo of teenager<br><span style="font-size:0.68rem;">Unsplash: search "confident teenager"</span>
+          </div>
+          <div style="padding:1.5rem;">
+            <span class="age-label">Ages 12–19</span>
+            <h3>Teenagers</h3>
+            <p>Teenage sessions are 45 minutes and blend hypnotherapy, EFT, and NLP. The emphasis is on empowerment — giving young people active, independent tools to manage exam pressure, social anxiety, self-esteem, and the emotional complexity of growing up.</p>
+          </div>
+        </div>
+        <div class="child-card fade-in" style="padding:0;overflow:hidden;">
+          <div style="height:140px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.15));display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.75rem;color:var(--text-light);padding:1rem;border-bottom:1px solid var(--circle);">
+            📷 Add your Reiki session photo<br><span style="font-size:0.68rem;">Your own therapy photo goes here</span>
+          </div>
+          <div style="padding:1.5rem;">
+            <span class="age-label">All Ages</span>
+            <h3>Reiki for Children</h3>
+            <p>Reiki is safe and appropriate for all ages. It is particularly valuable for anxious children who may not yet be ready for talking-based approaches. It requires nothing from them — just the willingness to lie still and rest — and many children find it deeply soothing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="parent-note fade-in">
+        <h3>What I want every parent to know</h3>
+        <p>My aim is never to create dependency on me or on any particular technique. Everything I do with children is designed to build their own internal toolkit — so they understand their emotions, know how to self-calm, and can access positive self-talk when they need it. These are skills for life, not just for the session.</p>
+        <p>Hypnotherapy is often the technique parents are most uncertain about. In practice, for children it is simply a form of focused, imaginative relaxation — very similar to the absorbed state children naturally enter during stories or creative play. Nothing is done without the child's understanding and willingness, and parents of younger children are always welcome to be present.</p>
+        <p style="margin-bottom:0;">If you have any questions before booking — about your child specifically, about what a session looks like, or simply to get a sense of whether this feels right — please <a href="contact.html">get in touch</a>. That conversation costs nothing and is often the most helpful first step.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" style="background:var(--white);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="max-width:720px;margin:0 auto;">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How do I know which service is right for me? <span>+</span></div>
+          <div class="faq-a">The best first step is simply to get in touch. A short conversation is usually enough to point you in the right direction — and there is no pressure to commit to anything. I would rather you take your time and feel confident in your choice.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How many sessions will I need? <span>+</span></div>
+          <div class="faq-a">This varies from person to person. EFT and hypnotherapy both tend to work relatively quickly compared to traditional talking therapies — most children and teens see meaningful results within 4–6 sessions, and adults often find the same. We review progress regularly and you are always in control of how long we continue.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you offer online sessions? <span>+</span></div>
+          <div class="faq-a">EFT and hypnotherapy are available both in person and online via video call. Reiki is in person only. Location details are shared on booking.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is everything confidential? <span>+</span></div>
+          <div class="faq-a">Yes. Everything shared in sessions is treated as strictly confidential. The only exceptions are situations involving serious risk of harm — these are explained clearly at the start of our work together. For children and young people, the same principles apply, and we discuss together what, if anything, is shared with parents.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">My child is currently in counselling — can they still work with you? <span>+</span></div>
+          <div class="faq-a">If your child is currently undertaking another form of therapy, it is best to complete that first before beginning hypnotherapy. However, EFT and Reiki can generally be used alongside other support — please get in touch to discuss your specific situation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">My child takes medication for their mental health — is this safe? <span>+</span></div>
+          <div class="faq-a">If your child takes medication for their mental health, please check with the prescribing doctor before booking hypnotherapy to confirm there are no contraindications. EFT and Reiki are generally considered safe alongside medication, but please mention this at booking so I can ensure the approach is appropriate.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do you offer reduced fees? <span>+</span></div>
+          <div class="faq-a">A small number of reduced-fee places are available for those who need them. Financial barriers should not prevent access to support — please get in touch to discuss this privately.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="text-align:center;">
+    <div class="container">
+      <span class="section-label">Next Step</span>
+      <h2>Ready to Begin?</h2>
+      <div class="divider"></div>
+      <p style="max-width:500px;margin:0 auto 2rem;">Book a session, or reach out first if you have questions. There is no pressure — just a conversation.</p>
+      <a href="book.html" class="btn-primary" style="margin-right:1rem;">Book a Session</a>
+      <a href="contact.html" class="btn-secondary">Get in Touch</a>
     </div>
   </section>
 
@@ -251,5 +564,18 @@
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    function scrollTo(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const icon = el.querySelector('span');
+      answer.classList.toggle('open');
+      icon.textContent = answer.classList.contains('open') ? '−' : '+';
+    }
+  </script>
 </body>
 </html>

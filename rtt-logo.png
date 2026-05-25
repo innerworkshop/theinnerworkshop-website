@@ -1,0 +1,115 @@
+backend:
+  name: github
+  repo: innerworkshop/theinnerworkshop-website
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# This makes the CMS available without needing Git knowledge
+publish_mode: simple
+
+collections:
+
+  # ---- SITE SETTINGS (name, email, tagline etc) ----
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Your Name", name: "owner_name", widget: "string", hint: "e.g. Sarah Cox" }
+          - { label: "Your Title / Role", name: "owner_title", widget: "string", hint: "e.g. Therapist & Wellbeing Practitioner" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Location (Town/Area)", name: "location", widget: "string", hint: "e.g. Surrey, UK" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Practical tools for lasting change" }
+          - { label: "Years of Experience", name: "years_experience", widget: "string", default: "10+" }
+
+  # ---- HOMEPAGE ----
+  - name: "homepage"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Home Page Content"
+        file: "_data/home.json"
+        fields:
+          - { label: "Hero Heading Line 1", name: "hero_line1", widget: "string", default: "Feel Safe." }
+          - { label: "Hero Heading Line 2", name: "hero_line2", widget: "string", default: "Feel Capable." }
+          - { label: "Hero Heading Line 3", name: "hero_line3", widget: "string", default: "Feel Understood." }
+          - { label: "Hero Paragraph", name: "hero_para", widget: "text" }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name / Role", name: "author", widget: "string", hint: "e.g. Sarah M., Parent" }
+
+  # ---- ABOUT PAGE ----
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About Page Content"
+        file: "_data/about.json"
+        fields:
+          - { label: "Your Name", name: "name", widget: "string" }
+          - { label: "Main Bio Paragraph 1", name: "bio1", widget: "text" }
+          - { label: "Main Bio Paragraph 2", name: "bio2", widget: "text" }
+          - { label: "Main Bio Paragraph 3", name: "bio3", widget: "text" }
+          - { label: "Your Photo", name: "photo", widget: "image", required: false, hint: "Upload your profile photo here" }
+          - label: "Qualifications"
+            name: "qualifications"
+            widget: "list"
+            field: { label: "Qualification", name: "qual", widget: "string" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # ---- SERVICES ----
+  - name: "services"
+    label: "Services & Prices"
+    files:
+      - name: "prices"
+        label: "Session Prices"
+        file: "_data/prices.json"
+        fields:
+          - { label: "EFT Session Price", name: "eft", widget: "string", hint: "e.g. £80 per session" }
+          - { label: "Adult Hypnotherapy Price", name: "hypno_adult", widget: "string", hint: "e.g. £150 per session" }
+          - { label: "Teen Hypnotherapy Price (12–19)", name: "hypno_teen", widget: "string", hint: "e.g. £65 per session" }
+          - { label: "Child Session Price (10–11)", name: "hypno_child", widget: "string", hint: "e.g. £50 per session" }
+          - { label: "Reiki Price", name: "reiki", widget: "string", hint: "e.g. £70 per session" }
+          - { label: "Parent Guidance Price", name: "parent", widget: "string", hint: "e.g. £80 per session" }
+          - { label: "School Training", name: "school", widget: "string", default: "POA — contact for a quote" }
+
+  # ---- BLOG POSTS ----
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["EFT & Tapping", "Hypnotherapy", "Children & Teens", "Parents", "Anxiety", "Reiki", "General"] }
+      - { label: "Summary (shown on blog listing)", name: "summary", widget: "text" }
+      - { label: "Featured Emoji", name: "emoji", widget: "string", hint: "e.g. 🌿", default: "🌿" }
+      - { label: "Body Content", name: "body", widget: "markdown" }
+
+  # ---- CONTACT INFO ----
+  - name: "contact"
+    label: "Contact Details"
+    files:
+      - name: "contact"
+        label: "Contact Page"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "In Person Location", name: "location", widget: "string" }
+          - { label: "Response Time Note", name: "response_time", widget: "string", default: "I aim to reply to all messages within 48 hours" }
+          - { label: "Personal Quote (shown on contact page)", name: "quote", widget: "text" }

@@ -1,40 +1,336 @@
-// Mobile nav toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks  = document.querySelector('.nav-links');
-
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-}
-
-// Close nav on link click (mobile)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// Active nav link
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
-});
-
-// Subtle scroll fade-in for elements
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Inner Workshop — Practical Tools for Lasting Change</title>
+  <meta name="description" content="The Inner Workshop offers practical emotional and psychological tools for adults, parents, teachers, children and adolescents. Lasting change starts here." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Homepage extras */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
     }
-  });
-}, { threshold: 0.1 });
+    .who-item {
+      text-align: center;
+      padding: 1.8rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      transition: all 0.3s;
+    }
+    .who-item:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 30px var(--shadow);
+      transform: translateY(-3px);
+    }
+    .who-item .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .who-item h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .who-item p { font-size: 0.9rem; margin: 0; }
 
-document.querySelectorAll('.card, .fade-in').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      counter-reset: steps;
+    }
+    .step { position: relative; }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      color: var(--circle);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step h3 { margin-bottom: 0.5rem; }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: var(--white);
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .testimonial p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+    .testimonial cite {
+      font-size: 0.85rem;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+    }
+    .stars { color: var(--teal); margin-bottom: 0.75rem; font-size: 0.85rem; }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      padding: 5rem 0;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-band h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-band p { color: rgba(255,255,255,0.85); max-width: 520px; margin: 0 auto 2rem; }
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--teal-dark);
+      padding: 0.85rem 2.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="The Inner Workshop logo" />
+        <span>The Inner Workshop</span>
+      </a>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="costs.html">Costs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Session</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="position:relative;">
+    <div class="hero-bg" style="background-image:url('images/woodland.jpg');background-size:cover;background-position:center;opacity:0.12;position:absolute;inset:0;z-index:0;border-radius:0;"></div>
+    <div class="hero-bg" style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,240,232,0.92) 0%,rgba(245,240,232,0.75) 100%);z-index:1;"></div>
+    <div class="hero-inner" style="position:relative;z-index:2;">
+      <div class="hero-text">
+        <span class="hero-tag">Welcome to The Inner Workshop</span>
+        <h1>Reframe.<br>Regulate.<br>Rewire.</h1>
+        <p class="hero-strapline">Practical tools for lasting change</p>
+        <p>Supporting children, teens and adults with evidence-based emotional and practical tools — because real change happens from the inside out.</p>
+        <a href="book.html" class="btn-primary">Book a Session</a>
+        <a href="services.html" class="btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-image">
+        <img src="images/logo.png" alt="The Inner Workshop" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS THIS FOR -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">Who We Work With</span>
+        <h2>Support for Every Stage of Life</h2>
+        <div class="divider"></div>
+        <p>The Inner Workshop is a welcoming space for anyone who wants to understand themselves better, build resilience, and create lasting positive change.</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-item fade-in" style="padding:0;overflow:hidden;text-align:left;">
+          <div style="height:160px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.2));display:flex;align-items:center;justify-content:center;font-size:0.78rem;color:var(--text-light);border-bottom:1px solid var(--circle);">
+            📷 Replace with photo of children/young people<br><span style="font-size:0.7rem;">(from Unsplash.com — search "children happy")</span>
+          </div>
+          <div style="padding:1.2rem;">
+            <div class="icon">🌱</div>
+            <h3>Young People</h3>
+            <p>Empowering young people to learn practical self-help tools to manage emotions, reduce stress and fears, change habits, and address confidence issues.</p>
+          </div>
+        </div>
+        <div class="who-item fade-in" style="padding:0;overflow:hidden;text-align:left;">
+          <div style="height:160px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.2));display:flex;align-items:center;justify-content:center;font-size:0.78rem;color:var(--text-light);border-bottom:1px solid var(--circle);">
+            📷 Replace with photo of adult in session<br><span style="font-size:0.7rem;">(your therapy photo goes here)</span>
+          </div>
+          <div style="padding:1.2rem;">
+            <div class="icon">🌳</div>
+            <h3>Adults</h3>
+            <p>Working through patterns, stress, and life transitions with clarity</p>
+          </div>
+        </div>
+        <div class="who-item fade-in" style="padding:0;overflow:hidden;text-align:left;">
+          <div style="height:160px;background:linear-gradient(135deg,rgba(184,212,192,0.3),rgba(91,143,168,0.2));display:flex;align-items:center;justify-content:center;font-size:0.78rem;color:var(--text-light);border-bottom:1px solid var(--circle);">
+            📷 Replace with photo of teacher/classroom<br><span style="font-size:0.7rem;">(from Unsplash.com — search "teacher classroom")</span>
+          </div>
+          <div style="padding:1.2rem;">
+            <div class="icon">📚</div>
+            <h3>Teachers</h3>
+            <p>Tools and frameworks to support teachers' and pupils' well-being in the classroom</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT QUOTE -->
+  <div class="highlight-band">
+    <div class="container">
+      <blockquote>"You don't have to have everything figured out. The path forward doesn't require perfection — just the right tools and the courage to learn how to use them. That's where everything changes."</blockquote>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">The Process</span>
+        <h2>How It Works</h2>
+        <div class="divider"></div>
+        <p>A clear, structured approach that respects your time and focuses on what actually helps.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step fade-in">
+          <div class="step-num">01</div>
+          <h3>Book a Discovery Call</h3>
+          <p>Not sure where to start? A discovery call is a relaxed, no-pressure conversation where we explore what's going on for you and whether we're the right fit. No commitment, just clarity.</p>
+          <a href="https://calendly.com/hello-theinnerworkshop" target="_blank" class="btn-primary" style="font-size:0.8rem;margin-top:0.75rem;display:inline-block;">Book a Free Discovery Call</a>
+        </div>
+        <div class="step fade-in">
+          <div class="step-num">02</div>
+          <h3>Book a Session</h3>
+          <p>Choose the service that feels right and pick a time that works for you — online booking is simple and quick.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="step-num">03</div>
+          <h3>We Connect</h3>
+          <p>Your first session is a safe, judgment-free conversation where we understand what you're working through and what you need.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="step-num">04</div>
+          <h3>Build Your Toolkit</h3>
+          <p>Together we develop practical, personalised strategies — not generic advice, but tools that actually fit your life.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="step-num">05</div>
+          <h3>Lasting Change</h3>
+          <p>The goal is real, sustainable change — not dependency. We work towards you feeling confident and capable on your own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SNAPSHOT -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">What We Offer</span>
+        <h2>Our Services</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="card-grid">
+        <div class="card fade-in">
+          <div class="card-icon">🤲</div>
+          <h3>EFT Tapping</h3>
+          <p>A gentle, evidence-based technique for all ages — reducing emotional intensity, managing anxiety, and building lasting self-help tools.</p>
+          <a href="services.html#eft" class="btn-secondary" style="margin-top:0.5rem;">Learn more</a>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">🌀</div>
+          <h3>RTT® Hypnotherapy</h3>
+          <p>Rapid Transformational Therapy — accessing the subconscious mind to identify root causes and create deep, lasting change.</p>
+          <a href="services.html#hypnotherapy" class="btn-secondary" style="margin-top:0.5rem;">Learn more</a>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">🌱</div>
+          <h3>Young People</h3>
+          <p>Specialist sessions for children and teens — age-appropriate, empowering, and designed to build emotional resilience for life.</p>
+          <a href="services.html#children" class="btn-secondary" style="margin-top:0.5rem;">Learn more</a>
+        </div>
+        <div class="card fade-in" style="border-style:dashed;opacity:0.85;">
+          <div class="card-icon">✨</div>
+          <h3>Reiki <span style="font-size:0.75rem;color:var(--text-light);font-family:'Jost',sans-serif;font-weight:300;"> — complementary</span></h3>
+          <p>A calming, optional addition to therapeutic work. Deeply restorative and suitable for all ages.</p>
+          <a href="services.html#reiki" class="btn-secondary" style="margin-top:0.5rem;">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-label">What People Say</span>
+        <h2>Client Testimonials</h2>
+        <div class="divider"></div>
+        <p>Testimonials from clients will appear here soon. If you'd like to share your experience, please <a href="contact.html">get in touch</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" style="background-image:url('images/beach-sunrise.jpg');background-size:cover;background-position:center top;position:relative;">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(44,110,122,0.82),rgba(58,138,154,0.75));"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <h2>Ready to Take the First Step?</h2>
+      <p>Booking a session is simple and there's no pressure. Just a conversation to see if we're the right fit for you.</p>
+      <a href="book.html" class="btn-white">Book Your Session</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo.png" alt="The Inner Workshop" style="width:40px;filter:brightness(0.8);" />
+            <span>The Inner Workshop</span>
+          </a>
+          <p>Practical tools for lasting change. Supporting adults, parents, teachers and young people across the UK.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="costs.html">Costs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="book.html">Book a Session</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></li>
+            <li><a href="book.html">Book online</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Inner Workshop. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

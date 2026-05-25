@@ -3,66 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Session — The Inner Workshop</title>
-  <meta name="description" content="Book an EFT, hypnotherapy or Reiki session with The Inner Workshop. Online booking available." />
+  <title>Safeguarding Policy — The Inner Workshop</title>
+  <meta name="description" content="The Inner Workshop safeguarding policy — protecting the children and young people we work with." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    @media (max-width: 768px) { .booking-grid { grid-template-columns: 1fr; } }
+    .legal-body { max-width: 780px; margin: 0 auto; }
+    .legal-body h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; color: var(--teal-dark); }
+    .legal-body h3 { font-size: 1.15rem; margin: 1.8rem 0 0.5rem; color: var(--teal); }
+    .legal-body p, .legal-body li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; }
+    .legal-body ul, .legal-body ol { margin: 0.5rem 0 1.2rem 1.5rem; }
+    .legal-body ul li, .legal-body ol li { margin-bottom: 0.5rem; }
 
-    .booking-info { position: sticky; top: 90px; }
-
-    .info-card {
+    .dsl-card {
       background: var(--white);
       border: 1px solid var(--circle);
-      border-radius: 16px;
-      padding: 1.8rem;
-      margin-bottom: 1.2rem;
+      border-left: 4px solid var(--teal);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0 2rem;
     }
-    .info-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
-    .info-card ul { list-style: none; }
-    .info-card ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      padding: 0.4rem 0;
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      border-bottom: 1px solid rgba(184,212,192,0.35);
-    }
-    .info-card ul li:last-child { border-bottom: none; }
-    .info-card .tick { color: var(--sage); flex-shrink: 0; }
+    .dsl-card h3 { margin-top: 0; color: var(--teal-dark); font-size: 1.1rem; }
+    .dsl-card p { margin-bottom: 0.3rem; font-size: 0.93rem; }
+    .dsl-card a { color: var(--teal); }
 
-    .calendly-placeholder {
-      background: var(--white);
-      border: 1px solid var(--circle);
-      border-radius: 20px;
-      min-height: 600px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 3rem;
+    .policy-section {
+      border-top: 1px solid var(--circle);
+      padding-top: 2rem;
+      margin-top: 2rem;
     }
-    .calendly-placeholder .icon { font-size: 3rem; margin-bottom: 1rem; }
-    .calendly-placeholder h3 { margin-bottom: 0.75rem; }
-    .calendly-placeholder p { font-size: 0.9rem; color: var(--text-mid); max-width: 400px; }
-    .calendly-placeholder code {
-      display: block;
-      background: rgba(184,212,192,0.2);
+
+    .review-badge {
+      display: inline-block;
+      background: rgba(184,212,192,0.25);
       border: 1px solid var(--circle);
       border-radius: 8px;
-      padding: 1rem;
-      font-size: 0.8rem;
-      color: var(--teal-dark);
-      margin-top: 1.5rem;
-      text-align: left;
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin: 0.5rem 0 1.5rem;
     }
   </style>
 </head>
@@ -91,60 +69,164 @@
 
   <div class="page-hero">
     <div class="container">
-      <span class="section-label">Booking</span>
-      <h1>Book a Session</h1>
+      <span class="section-label">Policy</span>
+      <h1>Safeguarding Policy</h1>
       <div class="divider"></div>
-      <p>Choose a time that works for you. If you're not sure which service to book, feel free to <a href="contact.html">get in touch first</a> — that conversation costs nothing.</p>
+      <p>The Inner Workshop is committed to protecting the welfare of all children and young people we work with. This policy applies to anyone working on behalf of The Inner Workshop.</p>
     </div>
   </div>
 
   <section>
     <div class="container">
-      <div class="booking-grid">
+      <div class="legal-body">
 
-        <div class="booking-info fade-in">
-          <div class="info-card">
-            <h3>Session Types & Duration</h3>
-            <ul>
-              <li><span class="tick">✓</span> EFT Tapping — 50 mins (all ages)</li>
-              <li><span class="tick">✓</span> Adult Hypnotherapy — 90 mins</li>
-              <li><span class="tick">✓</span> Teen Hypnotherapy (12–19) — 45 mins</li>
-              <li><span class="tick">✓</span> Child EFT / Audio (under 10) — 30 mins</li>
-              <li><span class="tick">✓</span> Reiki — 60 mins (in person)</li>
-              <li><span class="tick">✓</span> Parent Guidance — 50 mins</li>
-            </ul>
-          </div>
+        <!-- DSL Contact Card -->
+        <div class="dsl-card">
+          <h3>Designated Safeguarding Lead (DSL)</h3>
+          <p><strong>Name:</strong> Sarah Cox</p>
+          <p><strong>Phone:</strong> <a href="tel:07803127263">07803 127263</a></p>
+          <p><strong>Email:</strong> <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></p>
+        </div>
 
-          <div class="info-card">
-            <h3>Good to Know</h3>
-            <ul>
-              <li><span class="tick">✓</span> First session includes an initial consultation</li>
-              <li><span class="tick">✓</span> EFT & hypnotherapy available online or in person</li>
-              <li><span class="tick">✓</span> Reiki is in person only</li>
-              <li><span class="tick">✓</span> 24 hours notice required for cancellations</li>
-              <li><span class="tick">✓</span> Reduced fee places available — <a href="contact.html">enquire</a></li>
-            </ul>
-          </div>
+        <span class="review-badge">This policy was last reviewed on: 25 May 2026</span>
 
-          <div class="info-card" style="border-color: var(--teal); background: rgba(58,138,154,0.04);">
-            <h3>🧾 Receipts & Medicash</h3>
-            <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:0.75rem;">A professional receipt can be provided after every session — suitable for Medicash and other healthcare cash plans.</p>
-            <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:0.75rem;">Your receipt will include your name, date of treatment, type of treatment, amount paid, and my professional details.</p>
-            <p style="font-size:0.88rem;color:var(--text-light);margin-bottom:0;">Simply request a receipt when booking or by emailing <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a> after your session.</p>
-          </div>
+        <!-- Safeguarding Statement -->
+        <h2>Safeguarding Statement</h2>
+        <p>The Inner Workshop is a sole trader therapy business, offering Hypnotherapy (Rapid Transformational Therapy — RTT), Emotional Freedom Technique (EFT) and Reiki therapies in person and online.</p>
+        <p>The purpose of this policy is:</p>
+        <ul>
+          <li>To protect all who receive therapy through The Inner Workshop</li>
+          <li>To provide all clients, including young people and their families, with the overarching principles that guide our approach to child protection</li>
+        </ul>
+        <p>This policy applies to anyone working on behalf of The Inner Workshop.</p>
 
-          <div class="info-card">
-            <h3>Not Sure Where to Start?</h3>
-            <p style="font-size:0.9rem;color:var(--text-mid);margin-bottom:1rem;">A short conversation before booking is always welcome. There is no pressure and no obligation.</p>
-            <a href="contact.html" class="btn-secondary">Send a message →</a>
+        <!-- Legal Framework -->
+        <div class="policy-section">
+          <h2>Legal Framework</h2>
+          <p>This policy has been drawn up on the basis of legislation, policy and guidance that seek to protect children in the United Kingdom. A summary of the key legislation is available from <a href="https://www.nspcc.org.uk/learning" target="_blank" rel="noopener">nspcc.org.uk/learning</a>.</p>
+          <p>For the purposes of this policy, a child is anyone who has not yet reached their 18th birthday.</p>
+        </div>
+
+        <!-- Our Principles -->
+        <div class="policy-section">
+          <h2>Our Overarching Principles</h2>
+          <p>We believe that:</p>
+          <ul>
+            <li>Children should never experience abuse of any kind</li>
+            <li>We have a responsibility to promote the welfare of all children, to keep them safe, and to practise in a way that protects them</li>
+          </ul>
+          <p>We recognise that:</p>
+          <ul>
+            <li>The welfare of children is paramount in all the work we do and in all the decisions we take</li>
+            <li>All children, regardless of age, disability, gender reassignment, race, religion or belief, sex, gender or sexual orientation have an equal right to protection from all types of harm or abuse</li>
+            <li>Some children are additionally vulnerable because of the impact of previous experiences, their level of dependency, communication needs or other issues</li>
+            <li>Working in partnership with children, their parents, carers, and other agencies is essential in promoting their welfare</li>
+          </ul>
+          <p>We will seek to keep children safe by:</p>
+          <ul>
+            <li>Valuing them, listening to them and respecting them</li>
+            <li>Appointing a Designated Safeguarding Lead for children</li>
+            <li>Adopting child protection and safeguarding best practice through our policies, procedures and code of conduct</li>
+            <li>Developing and implementing an effective online safety policy and related procedures</li>
+            <li>Updating safeguarding training annually to ensure our policies, procedures and behaviour codes are followed confidently and competently</li>
+            <li>Recording, storing and using information professionally and securely, in line with data protection legislation and guidance</li>
+            <li>Sharing information about safeguarding and good practice with children and their families via our website</li>
+          </ul>
+        </div>
+
+        <!-- Dealing with Disclosures -->
+        <div class="policy-section">
+          <h2>Dealing with Disclosures and Concerns About a Child</h2>
+          <p>We believe that it is essential for disclosures and concerns to be dealt with efficiently and sensitively. The welfare of the child is paramount.</p>
+          <p>If Sarah Cox, The Inner Workshop therapist (and DSL), has a concern about the wellbeing of a child they are working with, they will contact the child's local Multi Agency Safeguarding Hub (MASH), Achieving for Children (AfC) Single Point of Access for Richmond Borough.</p>
+          <p>The DSL has a duty of confidentiality and should not disclose details of their work with a child to anyone outside of The Inner Workshop.</p>
+
+          <h3>Concerns may include, but are not limited to:</h3>
+          <ul>
+            <li>A child verbally disclosing information that the DSL considers may indicate that there is a risk to the child's physical or emotional safety</li>
+            <li>The therapist observing something that may indicate there is a risk to a child's physical or emotional safety</li>
+            <li>A child's behaviour towards the therapist or other individual present that indicates a risk to the child's physical or emotional safety</li>
+          </ul>
+
+          <h3>Process:</h3>
+          <ul>
+            <li>If there is an immediate risk to a child, the DSL will immediately contact the child's local Multi Agency Safeguarding Hub (MASH), or in an emergency the 999 service</li>
+            <li>Based on the level of concern, the DSL will assess the severity of the concern and escalate accordingly</li>
+            <li>The DSL will contact the school the child attends or the parent(s) depending on the circumstances</li>
+            <li>If it is not possible or appropriate to contact the school, the DSL will contact the child's local Multi Agency Safeguarding Hub (MASH)</li>
+          </ul>
+        </div>
+
+        <!-- Safer Recruitment -->
+        <div class="policy-section">
+          <h2>Safer Recruitment</h2>
+          <p>The Inner Workshop therapist (Sarah Cox) is an active teaching staff member within an independent school, and as such, maintains appropriate and up-to-date safeguarding documents and training and full DBS certification.</p>
+        </div>
+
+        <!-- Managing Allegations -->
+        <div class="policy-section">
+          <h2>Managing Allegations Against the Therapist</h2>
+          <p>We are aware that there is a potential for children to make allegations against a therapist. When an allegation against a therapist is lodged, the response will be prompt, transparent and objective:</p>
+          <ul>
+            <li>All allegations, however minor, will be taken seriously and handled promptly</li>
+            <li>The therapist (DSL) will immediately cease working with the client involved and/or pause all practice if the allegation involves children or vulnerable adults until the matter is investigated</li>
+            <li>The therapist (DSL) will notify their professional indemnity insurance provider immediately to seek legal advice and guidance</li>
+            <li>The therapist (DSL) will report the allegation to their professional regulating body to comply with ethical frameworks</li>
+            <li>The therapist (DSL) will keep comprehensive, accurate, and confidential records of the allegation, including dates, times, and exact words used (where possible), distinguishing between fact, observation, and opinion</li>
+            <li>The therapist (DSL) will ensure any relevant evidence is preserved but not used to interrogate the client</li>
+            <li>The therapist (DSL) will cooperate fully with any formal investigation by the police or social services</li>
+            <li>The therapist (DSL) will inform the complainant of the actions being taken and provide information on how they can formally report the issue to local social care services or the LADO (Local Authority Designated Officer)</li>
+            <li>The therapist (DSL) will make contact with the child's parent(s) and ensure that the child and parent are made aware of the course of action</li>
+            <li>All communications about the allegation will be documented</li>
+          </ul>
+        </div>
+
+        <!-- DSL Role -->
+        <div class="policy-section">
+          <h2>Role of the Designated Safeguarding Lead</h2>
+          <p>The Designated Safeguarding Lead is an important role to keep the children we work with safe. The identity and contact details of this individual are made available to all clients and are easy to access for members of the public.</p>
+          <p>The Designated Safeguarding Lead shall:</p>
+          <ul>
+            <li>Lead The Inner Workshop's response to any concern, complaint, allegation or other incident relating to child protection, safeguarding, children's welfare or the actions or inactions of the therapist</li>
+            <li>Be the first point of contact for children and parents/guardians for any concerns about behaviour or activities</li>
+            <li>Recognise and refer as appropriate all concerns or allegations about children in a timely manner, taking into account any risk of harm that may increase due to a delay in response</li>
+            <li>Be responsible for passing on any findings as requested by the relevant authorities in a timely manner</li>
+            <li>Review and keep updated The Inner Workshop's systems for keeping young people safe</li>
+          </ul>
+        </div>
+
+        <!-- Online Safeguarding -->
+        <div class="policy-section">
+          <h2>Online Safeguarding Policy</h2>
+          <span class="review-badge">Dated: 25 May 2026</span>
+          <p>The purpose of this document is to set out the policy surrounding the delivery of online therapy through The Inner Workshop.</p>
+
+          <h3>For Parents</h3>
+          <ul>
+            <li>It is advised that a parent or adult should be in the house at all times, particularly for younger children</li>
+            <li>Children should keep the door to the room where they are having therapy ajar during sessions — this is for the protection of the therapist as well as the child</li>
+            <li>Children must be dressed appropriately for therapy</li>
+            <li>Please provide an emergency contact number that the therapist can use should something arise during the session</li>
+          </ul>
+
+          <h3>For the Therapist</h3>
+          <ul>
+            <li>All standard safeguarding training and procedures remain applicable when delivering therapy online</li>
+            <li>Therapy sessions will not be recorded unless expressly agreed by parent and therapist prior to the session, with written permission</li>
+            <li>The therapist will explain to parents in an introductory call or email how they work, how sessions are structured, and their expectations of the child</li>
+            <li>Should a child have a medical episode during a session, the therapist will contact the parent immediately</li>
+          </ul>
+
+          <h3>Contact</h3>
+          <div class="dsl-card" style="margin-top:1rem;">
+            <h3>Designated Safeguarding Lead</h3>
+            <p><strong>Name:</strong> Sarah Cox</p>
+            <p><strong>Phone:</strong> <a href="tel:07803127263">07803 127263</a></p>
+            <p><strong>Email:</strong> <a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></p>
           </div>
         </div>
 
-        <!-- CALENDLY EMBED -->
-        <div class="fade-in">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/hello-theinnerworkshop" style="min-width:320px;height:700px;border-radius:20px;overflow:hidden;border:1px solid var(--circle);"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        </div>
+        <span class="review-badge">We are committed to reviewing our safeguarding policy, training and good practice annually. This policy was last reviewed on: 25 May 2026</span>
 
       </div>
     </div>
@@ -173,10 +255,11 @@
           </ul>
         </div>
         <div>
-          <h4>Get in Touch</h4>
+          <h4>Legal</h4>
           <ul>
-            <li><a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></li>
-            <li><a href="book.html">Book online</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="safeguarding.html">Safeguarding Policy</a></li>
           </ul>
         </div>
       </div>
@@ -185,6 +268,7 @@
         <div class="footer-legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms & Conditions</a>
+          <a href="safeguarding.html">Safeguarding</a>
         </div>
       </div>
     </div>
