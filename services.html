@@ -46,11 +46,6 @@
       align-items: start;
       margin-bottom: 2.5rem;
     }
-    @media (max-width: 768px) {
-      .service-header { grid-template-columns: 1fr; gap: 2rem; }
-      .service-visual { position: static; top: auto; }
-    }
-
     .service-visual {
       background: linear-gradient(135deg, rgba(184,212,192,0.25), rgba(91,143,168,0.08));
       border: 1px solid var(--circle);
@@ -193,6 +188,16 @@
     }
     .faq-a { color: var(--text-mid); padding-top: 0.7rem; font-size: 0.92rem; display: none; line-height: 1.7; }
     .faq-a.open { display: block; }
+    @media (max-width: 768px) {
+      .service-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .service-visual {
+        position: static !important;
+        top: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
