@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /blog.html
+
+Sitemap: https://www.theinnerworkshop.co.uk/sitemap.xml

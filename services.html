@@ -46,6 +46,8 @@
       align-items: start;
       margin-bottom: 2.5rem;
     }
+    @media (max-width: 768px) { .service-header { grid-template-columns: 1fr; gap: 2rem; } }
+
     .service-visual {
       background: linear-gradient(135deg, rgba(184,212,192,0.25), rgba(91,143,168,0.08));
       border: 1px solid var(--circle);
@@ -188,16 +190,6 @@
     }
     .faq-a { color: var(--text-mid); padding-top: 0.7rem; font-size: 0.92rem; display: none; line-height: 1.7; }
     .faq-a.open { display: block; }
-    @media (max-width: 768px) {
-      .service-header {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .service-visual {
-        position: static !important;
-        top: auto !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -280,18 +272,26 @@
       <div class="technique-box fade-in">
         <h4>How the Technique Works</h4>
         <p>EFT works by stimulating specific acupressure points on the face and body through gentle tapping, while simultaneously holding a thought, feeling or memory in mind. This combination appears to send a calming signal to the amygdala — the brain's threat-response centre — reducing the emotional charge attached to that thought or memory. Research by scientists including Dr Peta Stapleton and Dr Dawson Church has demonstrated measurable reductions in cortisol (the stress hormone) and changes in brain activity following EFT. A typical sequence involves a setup statement (acknowledging the issue while offering self-acceptance), followed by tapping through a series of points while speaking to the feeling or belief.</p>
+        <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.88rem;">Want to understand the science behind tapping? <a href="https://energytapping.com/how-tapping-works-infographic/" target="_blank" rel="noopener">Read the research infographic by Dr David Feinstein →</a></p>
       </div>
 
-      
+      <h3 style="margin-bottom:1rem;">The Tapping Points</h3>
+      <div class="tapping-points">
+        <div class="tap-point"><div class="dot"></div>Side of the hand (karate chop)</div>
+        <div class="tap-point"><div class="dot"></div>Top of the head</div>
+        <div class="tap-point"><div class="dot"></div>Eyebrow</div>
+        <div class="tap-point"><div class="dot"></div>Side of the eye</div>
+        <div class="tap-point"><div class="dot"></div>Under the eye</div>
+        <div class="tap-point"><div class="dot"></div>Under the nose</div>
+        <div class="tap-point"><div class="dot"></div>Chin</div>
+        <div class="tap-point"><div class="dot"></div>Collarbone</div>
+        <div class="tap-point"><div class="dot"></div>Under the arm</div>
+      </div>
 
       <!-- Tapping infographic — directly below tapping points list -->
       <div style="margin:1.5rem 0;text-align:center;">
         <img src="tapping-points.png" alt="The Tapping Points — EFT infographic by The Inner Workshop"
           style="max-width:100%;border-radius:16px;box-shadow:0 8px 30px rgba(58,138,154,0.12);" />
-        <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.75rem;">
-          Want to understand the science behind tapping?
-          <a href="https://energytapping.com/how-tapping-works-infographic/" target="_blank" rel="noopener">Read the research infographic by Dr David Feinstein →</a>
-        </p>
       </div>
 
       <!-- EFT session photo — smaller, below infographic -->
@@ -311,7 +311,7 @@
 
       <div class="service-header">
         <div class="service-visual fade-in" style="padding:0;overflow:hidden;">
-          <img src="rtt-session.jpg" alt="RTT Hypnotherapy session" style="width:100%;height:auto;max-height:320px;object-fit:contain;background:#f5f0e8;border-radius:20px 20px 0 0;" />
+          <img src="rtt-session.jpg" alt="RTT Hypnotherapy session" style="width:100%;height:220px;object-fit:cover;object-position:center top;border-radius:20px 20px 0 0;" />
           <div style="padding:1.5rem;text-align:center;">
             <img src="rtt-badge.png" alt="RTT Rapid Transformational Practitioner" style="width:110px;margin:0 auto 1rem;" />
             <div class="age-badges" style="justify-content:center;">
@@ -372,6 +372,9 @@
         </div>
       </div>
 
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="book.html" class="btn-primary">Book an RTT Session</a>
+      </div>
     </div>
   </div>
 
@@ -380,7 +383,7 @@
     <div class="container">
       <div class="service-header">
         <div class="service-visual fade-in" style="padding:0;overflow:hidden;">
-          <img src="reiki-session.jpg" alt="Reiki session in Sarah's therapy room" style="width:100%;height:auto;max-height:420px;object-fit:contain;background:#f5f0e8;border-radius:20px 20px 0 0;" />
+          <img src="reiki-session.jpg" alt="Reiki session in Sarah's therapy room" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;border-radius:20px 20px 0 0;" />
           <div style="padding:1.5rem;">
             <img src="golden-grass.jpg" alt="" style="display:none;" />
             <h3>Reiki</h3>
@@ -449,6 +452,7 @@
           </div>
         </div>
         <div class="child-card fade-in">
+          <img src="children-thumbs.png" alt="Happy children" style="width:100%;height:140px;object-fit:cover;" />
           <div style="padding:1.5rem;">
             <span class="age-label">Ages 12–19</span>
             <h3>Teenagers</h3>
@@ -470,6 +474,7 @@
         <p>My aim is never to create dependency on me or on any particular technique. Everything I do with children is designed to build their own internal toolkit — so they understand their emotions, know how to self-calm, and can access positive self-talk when they need it. These are skills for life, not just for the session.</p>
         <p>Hypnotherapy is often the technique parents are most uncertain about. In practice, for children it is simply a form of focused, imaginative relaxation — very similar to the absorbed state children naturally enter during stories or creative play. Nothing is done without the child's understanding and willingness, and parents of younger children are always welcome to be present.</p>
         <p style="margin-bottom:0;">If you have any questions before booking — about your child specifically, about what a session looks like, or simply to get a sense of whether this feels right — please <a href="contact.html">get in touch</a>. That conversation costs nothing and is often the most helpful first step.</p>
+          <p style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--circle);font-size:0.92rem;color:var(--text-mid);">My work sits within complementary therapy and coaching, not clinical psychology or psychotherapy. If I feel that a child would benefit from a different level of support, I will always be honest about that and can help guide you towards the right professional.</p>
       </div>
     </div>
   </div>
@@ -518,7 +523,12 @@
   <!-- CTA -->
   <section style="text-align:center;">
     <div class="container">
-      <a href="contact.html" class="btn-primary">Get in Touch</a>
+      <span class="section-label">Next Step</span>
+      <h2>Ready to Begin?</h2>
+      <div class="divider"></div>
+      <p style="max-width:500px;margin:0 auto 2rem;">Book a session, or reach out first if you have questions. There is no pressure — just a conversation.</p>
+      <a href="book.html" class="btn-primary" style="margin-right:1rem;">Book a Session</a>
+      <a href="contact.html" class="btn-secondary">Get in Touch</a>
     </div>
   </section>
 
@@ -540,13 +550,14 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="costs.html">Costs</a></li>
             <li><a href="book.html">Book a Session</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>Get in Touch</h4>
           <ul>
             <li><a href="mailto:hello@theinnerworkshop.co.uk">hello@theinnerworkshop.co.uk</a></li>
-            <li><a href="book.html">Book online</a></li>
+            <li><a href="book.html">Book a discovery call</a></li>
           </ul>
         </div>
       </div>
