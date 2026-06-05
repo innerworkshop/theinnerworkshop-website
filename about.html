@@ -94,6 +94,9 @@
     .value-card .val-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
     .value-card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
   </style>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 </head>
 <body>
 
@@ -109,7 +112,8 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services-directory.html">Services</a></li>
+        <li><a href="support-directory.html">Support</a></li>
         <li><a href="costs.html">Costs</a></li>
         <li><a href="contact.html" class="nav-cta" style="background:var(--teal-light)!important;">Get in Touch</a></li>
       </ul>
@@ -264,5 +268,69 @@
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="main.js"></script>
+
+  <!-- ── COOKIE BANNER ── -->
+  <div id="cookie-banner" style="
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:9999;
+    background:#f5f0e8;
+    border-top:2px solid #B8D4C0;
+    padding:1.2rem 2rem;
+    box-shadow:0 -4px 24px rgba(58,138,154,0.1);
+    font-family:'Jost',sans-serif;
+  ">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+      <p style="margin:0;font-size:0.85rem;color:#5A6B65;max-width:680px;line-height:1.6;">
+        This website uses cookies to ensure you get the best experience. We do not use advertising or tracking cookies. By clicking <strong>Accept</strong> you agree to our use of essential cookies.
+        <a href="privacy.html" style="color:#3A8A9A;text-decoration:underline;">Read our Privacy Policy</a>.
+      </p>
+      <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+        <button id="cookie-decline" style="
+          background:transparent;
+          color:#5A6B65;
+          border:1px solid #B8D4C0;
+          padding:0.55rem 1.2rem;
+          border-radius:30px;
+          font-size:0.8rem;
+          letter-spacing:0.06em;
+          text-transform:uppercase;
+          cursor:pointer;
+          font-family:'Jost',sans-serif;
+        ">Decline</button>
+        <button id="cookie-accept" style="
+          background:#3A8A9A;
+          color:white;
+          border:none;
+          padding:0.55rem 1.4rem;
+          border-radius:30px;
+          font-size:0.8rem;
+          letter-spacing:0.06em;
+          text-transform:uppercase;
+          cursor:pointer;
+          font-family:'Jost',sans-serif;
+        ">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var consent = localStorage.getItem('tiw-cookie-consent');
+      if (!consent) {
+        banner.style.display = 'block';
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('tiw-cookie-consent', 'accepted');
+        banner.style.display = 'none';
+      });
+      document.getElementById('cookie-decline').addEventListener('click', function() {
+        localStorage.setItem('tiw-cookie-consent', 'declined');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
 </body>
 </html>

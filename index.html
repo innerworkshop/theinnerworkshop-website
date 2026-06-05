@@ -111,6 +111,9 @@
       }
     }
   </style>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 </head>
 <body>
 
@@ -127,7 +130,8 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services-directory.html">Services</a></li>
+        <li><a href="support-directory.html">Support</a></li>
         <li><a href="costs.html">Costs</a></li>
         <li><a href="contact.html" class="nav-cta" style="background:var(--teal-light)!important;">Get in Touch</a></li>
       </ul>
@@ -333,6 +337,14 @@
           <p>"Sarah and I worked together recently. I was a bit nervous about what to expect from the emotional freedom technique (tapping). It all felt a bit 'woo woo'. But nothing had previously worked for me — grief counselling, traditional counselling, ignoring issues (all of it!) — so I wanted to see whether something different could shift some blockages and help me move into a more constructive space. Sarah was brilliant. She listened, took all the time I needed and her practice genuinely helped me. I felt lighter and more at ease with some of the big life problems I was turning myself into knots with. Sarah is so kind, generous and dedicated to this practice. She's clearly passionate about this as a way to help people and I can see why. Cannot recommend Sarah more."</p>
           <cite>— Josie</cite>
         </div>
+        <div class="testimonial">
+          <p>"I can't thank Sarah enough for what she has helped me achieve with EFT. I am without doubt calmer, emotionally lighter, more resilient, and happier than I've been in a long time. Sarah has created a wonderfully calm and inviting therapy space in her home. She is very professional but has such warmth and openness, which for me instilled a confidence that I was doing the right thing. I am looking forward to trying Reiki with her next."</p>
+          <cite>— Ann</cite>
+        </div>
+        <div class="testimonial">
+          <p>"If you feel at all sceptical about what RTT and EFT can do for you, I encourage you to just lean in and give it a try. My sessions with Sarah were transformative for me. She is not only professional and wise, but so empathetic and able to really get to the root of what you need to work on. I felt so safe and held, and the sessions have truly helped me calm my nervous system and become more aware of my thoughts. I was surprised by how quickly the results came — it didn't take many sessions to experience a real shift. I now have tools I can use myself, which feels so empowering. There is something really powerful about working one on one with someone who truly sees you."</p>
+          <cite>— Kelly</cite>
+        </div>
       </div>
     </div>
   </section>
@@ -417,5 +429,69 @@
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="main.js"></script>
+
+  <!-- ── COOKIE BANNER ── -->
+  <div id="cookie-banner" style="
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:9999;
+    background:#f5f0e8;
+    border-top:2px solid #B8D4C0;
+    padding:1.2rem 2rem;
+    box-shadow:0 -4px 24px rgba(58,138,154,0.1);
+    font-family:'Jost',sans-serif;
+  ">
+    <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+      <p style="margin:0;font-size:0.85rem;color:#5A6B65;max-width:680px;line-height:1.6;">
+        This website uses cookies to ensure you get the best experience. We do not use advertising or tracking cookies. By clicking <strong>Accept</strong> you agree to our use of essential cookies.
+        <a href="privacy.html" style="color:#3A8A9A;text-decoration:underline;">Read our Privacy Policy</a>.
+      </p>
+      <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+        <button id="cookie-decline" style="
+          background:transparent;
+          color:#5A6B65;
+          border:1px solid #B8D4C0;
+          padding:0.55rem 1.2rem;
+          border-radius:30px;
+          font-size:0.8rem;
+          letter-spacing:0.06em;
+          text-transform:uppercase;
+          cursor:pointer;
+          font-family:'Jost',sans-serif;
+        ">Decline</button>
+        <button id="cookie-accept" style="
+          background:#3A8A9A;
+          color:white;
+          border:none;
+          padding:0.55rem 1.4rem;
+          border-radius:30px;
+          font-size:0.8rem;
+          letter-spacing:0.06em;
+          text-transform:uppercase;
+          cursor:pointer;
+          font-family:'Jost',sans-serif;
+        ">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var consent = localStorage.getItem('tiw-cookie-consent');
+      if (!consent) {
+        banner.style.display = 'block';
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('tiw-cookie-consent', 'accepted');
+        banner.style.display = 'none';
+      });
+      document.getElementById('cookie-decline').addEventListener('click', function() {
+        localStorage.setItem('tiw-cookie-consent', 'declined');
+        banner.style.display = 'none';
+      });
+    })();
+  </script>
 </body>
 </html>
