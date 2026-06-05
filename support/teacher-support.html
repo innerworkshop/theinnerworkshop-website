@@ -3,62 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teacher Wellbeing Support — EFT for Teachers, Classroom Wellbeing & CPD | The Inner Workshop</title>
-  <meta name="description" content="Therapeutic support and practical wellbeing tools for teachers and school staff. EFT tapping, stress management, and classroom emotional wellbeing frameworks." />
+  <title>Tapping for Teachers — EFT for Teacher Wellbeing & Classroom Support | The Inner Workshop</title>
+  <meta name="description" content="EFT tapping for teachers — practical stress relief, classroom wellbeing tools and CPD from Sarah Cox. Evidence-based techniques for educator mental health." />
   <link rel="canonical" href="https://theinnerworkshop.co.uk/support/teacher-support.html" />
   <link rel="stylesheet" href="../style.css" />
-  
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <style>
-    /* ── Mobile responsive ── */
+    .stat-box {
+      background: white;
+      border: 1px solid var(--circle);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .stat-box .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--teal);
+      font-weight: 400;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .stat-box p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.4;
+    }
+    .stress-card {
+      background: white;
+      border: 1px solid var(--circle);
+      border-left: 3px solid var(--teal);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .stress-card h4 {
+      font-size: 0.95rem;
+      color: var(--teal-dark);
+      margin-bottom: 0.3rem;
+    }
+    .stress-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin: 0;
+    }
+    .script-card {
+      background: var(--cream);
+      border: 1px solid var(--circle);
+      border-left: 3px solid var(--sage);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .script-card h4 { color: var(--teal-dark); margin-bottom: 0.5rem; font-size: 1rem; }
+    .script-card .setup { font-style: italic; color: var(--text-mid); margin-bottom: 0.75rem; font-size: 0.9rem; }
+    .script-card .points { font-size: 0.85rem; color: var(--text-mid); line-height: 1.9; }
+    .script-card .points strong { color: var(--teal-dark); }
+    .step-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--teal); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 500; flex-shrink: 0;
+      font-family: 'Jost', sans-serif;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--circle);
+      padding: 1rem 0;
+    }
+    .faq-item h4 { color: var(--teal-dark); font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .faq-item p { font-size: 0.9rem; color: var(--text-mid); margin: 0; }
+    .warning-box {
+      background: #fffbf0;
+      border: 1px solid #e8d89a;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+    }
+    .warning-box li { font-size: 0.9rem; color: var(--text-mid); line-height: 2; list-style: none; }
+    .warning-box li::before { content: "⚠️ "; }
+
     @media (max-width: 768px) {
-
-      /* Stack two-column content grids */
-      .mobile-stack {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-
-      /* Remove sticky sidebar on mobile */
-      .mobile-unstick {
-        position: static !important;
-        top: auto !important;
-      }
-
-      /* Card grids: single column on very small screens */
-      .card-grid {
-        grid-template-columns: 1fr !important;
-      }
-
-      /* Breadcrumb wraps neatly */
-      .breadcrumb {
-        font-size: 0.75rem;
-        flex-wrap: wrap;
-      }
-
-      /* Hero text sizing */
+      .mobile-stack { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .mobile-unstick { position: static !important; top: auto !important; }
+      .card-grid { grid-template-columns: 1fr !important; }
       h1 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; }
       h2 { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
-
-      /* Full width buttons on mobile */
-      .btn-primary, .btn-secondary {
-        display: block !important;
-        text-align: center;
-        margin-right: 0 !important;
-      }
-
-      /* Ensure images don't overflow */
-      img { max-width: 100% !important; height: auto !important; }
-
-      /* Padding reduction on mobile */
       section { padding: 3rem 0 !important; }
       .container { padding: 0 1.25rem !important; }
     }
   </style>
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
 </head>
 <body>
+
   <nav>
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
@@ -72,66 +110,343 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../services-directory.html">Services</a></li>
-        <li><a href="../support-directory.html"class="active">Support</a></li>
+        <li><a href="../support-directory.html" class="active">Support</a></li>
         <li><a href="../costs.html">Costs</a></li>
         <li><a href="../contact.html" class="nav-cta" style="background:var(--teal-light)!important;">Get in Touch</a></li>
       </ul>
     </div>
   </nav>
-<div style="font-size:0.8rem;padding:1rem 0 0;max-width:1100px;margin:0 auto;padding:0.75rem 2rem;"><a href="../index.html" style="color:var(--teal);">Home</a><span style="margin:0 0.5rem;color:var(--text-light);">/</span><a href="../support-directory.html" style="color:var(--teal);">Support</a><span style="margin:0 0.5rem;color:var(--text-light);">/</span><span style="color:var(--text-mid);">Teacher Support</span></div>
-  <section style="padding:4rem 0 2rem;">
+
+  <!-- Breadcrumb -->
+  <div style="font-size:0.8rem;padding:0.75rem 2rem;max-width:1100px;margin:0 auto;">
+    <a href="../index.html" style="color:var(--teal);">Home</a>
+    <span style="margin:0 0.5rem;color:var(--text-light);">/</span>
+    <a href="../support-directory.html" style="color:var(--teal);">Support</a>
+    <span style="margin:0 0.5rem;color:var(--text-light);">/</span>
+    <span style="color:var(--text-mid);">Teacher Support</span>
+  </div>
+
+  <!-- HERO -->
+  <section style="padding:3rem 0 2rem;">
     <div class="container">
       <span class="section-label">Educators &amp; School Staff</span>
-      <h1>Teacher Support</h1>
-      <p style="font-size:1.1rem;max-width:640px;margin-top:1rem;font-style:italic;border-left:3px solid var(--circle);padding-left:1.2rem;">Practical wellbeing tools and therapeutic support for teachers and school staff — helping educators manage stress and burnout, and equipping them to support pupil emotional wellbeing in the classroom.</p>
+      <h1>Tapping for Teachers</h1>
+      <p style="font-size:1.1rem;max-width:640px;margin-top:1rem;font-style:italic;border-left:3px solid var(--circle);padding-left:1.2rem;">A practical guide to EFT — evidence-based tools to reduce stress in the classroom and beyond. Knowledge drawn from Dr Peta Stapleton's clinical EFT research and the EFT &amp; Mindfulness Centre, UK.</p>
     </div>
   </section>
 
+  <!-- MAIN CONTENT -->
   <section style="padding:1rem 0 4rem;">
-    <div class="container" class="mobile-stack" style="display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;">
+    <div class="container mobile-stack" style="display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;">
+
       <div>
-        <h2 style="margin-bottom:1rem;">Supporting the People Who Support Children</h2>
-        <p>Teaching is one of the most emotionally demanding professions there is. With over 25 years in education as a teacher, dyslexia specialist, and SENDCo, I understand the unique pressures that school staff face — the relentless pace, the emotional weight of responsibility, and the challenge of supporting children's wellbeing while managing your own.</p>
-        <p>I offer individual therapeutic support for teachers and school staff, as well as group presentations and professional development sessions on emotional wellbeing frameworks for the classroom.</p>
 
-        <h2 style="margin:2rem 0 1rem;">What I Offer Teachers</h2>
-        <h3 style="margin:1.5rem 0 0.75rem;">Individual Wellbeing Sessions</h3>
-        <p>One-to-one EFT Tapping and RTT Hypnotherapy sessions tailored specifically to the pressures of teaching — managing stress, reducing burnout, processing difficult experiences, and building sustainable emotional resilience.</p>
+        <!-- What is EFT -->
+        <h2 style="margin-bottom:1rem;">What is EFT Tapping?</h2>
+        <p>Emotional Freedom Techniques (EFT) — also called Tapping — is an evidence-based stress regulation tool. It combines gentle fingertip tapping on acupressure points with focused attention on a feeling or situation. It works <em>bottom-up</em>: calming the body first, which then allows the mind to follow.</p>
 
-        <h3 style="margin:1.5rem 0 0.75rem;">Classroom Wellbeing Tools</h3>
-        <p>Practical EFT-based frameworks you can use directly with your pupils — simple, evidence-based techniques that take minutes to deliver and can make a meaningful difference to emotional regulation and readiness to learn in the classroom.</p>
-
-        <h3 style="margin:1.5rem 0 0.75rem;">School Presentations &amp; CPD</h3>
-        <p>Engaging presentations for staff groups on emotional wellbeing, EFT tapping, and supporting pupil mental health. If you have attended a presentation and would like to find out more or sign up to receive resources and updates, please use the link below.</p>
-
-        <div style="background:var(--cream);border:1px solid var(--circle);border-radius:16px;padding:2rem;margin-top:2rem;">
-          <h3 style="margin-bottom:0.75rem;">Join the Teacher Mailing List</h3>
-          <p style="font-size:0.95rem;margin-bottom:1.2rem;">Sign up to receive practical resources, wellbeing tools, and updates on workshops and presentations for educators.</p>
-          <a href="../contact.html" class="btn-primary" style="display:inline-block;">Get in Touch to Sign Up</a>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
+          <div class="stress-card">
+            <h4>🧠 What you say or think</h4>
+            <p>A setup statement naming your feeling, followed by short reminder phrases at each point</p>
+          </div>
+          <div class="stress-card">
+            <h4>🤲 Where you tap</h4>
+            <p>Specific acupoints on the face and upper body, shown to calm the brain's stress response</p>
+          </div>
+          <div class="stress-card">
+            <h4>⚡ Why it works</h4>
+            <p>Tapping sends safety signals to the amygdala — the brain's alarm centre — interrupting the stress loop</p>
+          </div>
+          <div class="stress-card">
+            <h4>📋 The evidence</h4>
+            <p>Clinical EFT is tested in research trials worldwide by Dr Stapleton and others — it is the protocol used here</p>
+          </div>
         </div>
+
+        <!-- Why the evidence matters -->
+        <h2 style="margin:2rem 0 1rem;">Why the Evidence Matters</h2>
+        <p>Research by Dr Peta Stapleton (Bond University, Australia) and others shows that EFT produces measurable physiological and psychological change:</p>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin:1.2rem 0;">
+          <div class="stat-box">
+            <span class="stat-num">↓43%</span>
+            <p>Average reduction in cortisol after EFT sessions</p>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">0–10</span>
+            <p>SUD scale reliably tracks distress before &amp; after</p>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">&lt;10min</span>
+            <p>Typical session length for in-the-moment relief</p>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">🌍</span>
+            <p>Used in schools, hospitals &amp; communities worldwide</p>
+          </div>
+        </div>
+
+        <div style="background:#fffbf0;border:1px solid #e8d89a;border-radius:10px;padding:1rem 1.2rem;margin:1rem 0;">
+          <p style="font-size:0.875rem;margin:0;color:var(--text-mid);">EFT is gaining scientific support and is accepted as a legitimate psychological technique. It is <strong>not</strong> a replacement for professional mental health treatment. Always seek professional advice for serious mental health concerns.</p>
+        </div>
+
+        <!-- How stress shows up -->
+        <h2 style="margin:2rem 0 1rem;">How Stress Shows Up for Teachers</h2>
+        <p>Teaching is one of the highest-stress professions. EFT works best when you are <strong>very specific</strong> about your experience. Here are common teacher stress patterns:</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin:1.2rem 0;">
+          <div class="stress-card">
+            <h4>📋 Workload Overwhelm</h4>
+            <p>Too much to do, admin pressure, planning late into the evening</p>
+          </div>
+          <div class="stress-card">
+            <h4>👁️ Performance Pressure</h4>
+            <p>Observations, Ofsted, expectations, fear of not being enough</p>
+          </div>
+          <div class="stress-card">
+            <h4>💔 Compassion Fatigue</h4>
+            <p>Absorbing students' emotional pain, carrying their stress home</p>
+          </div>
+          <div class="stress-card">
+            <h4>⏰ No Space for Self</h4>
+            <p>No lunch break, no transition time, always "on"</p>
+          </div>
+          <div class="stress-card">
+            <h4>🌙 Night-Time Activation</h4>
+            <p>Mind racing, replaying the day, unable to switch off</p>
+          </div>
+          <div class="stress-card">
+            <h4>🔄 Chronic Background Stress</h4>
+            <p>Low-grade tension that has become the new normal</p>
+          </div>
+        </div>
+
+        <!-- The 5 Steps -->
+        <h2 style="margin:2rem 0 1rem;">The 5 Steps</h2>
+        <div style="background:var(--cream);border:1px solid var(--circle);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;">
+          <p style="font-style:italic;color:var(--teal-dark);border-left:3px solid var(--circle);padding-left:1rem;margin-bottom:1.2rem;">"Even though I [describe your feeling], I deeply and completely accept myself."</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div class="step-circle">1</div>
+              <div><strong style="color:var(--teal-dark);">Identify &amp; Rate</strong><br/><span style="font-size:0.875rem;color:var(--text-mid);">Name your feeling or issue. Rate your distress 0–10 on the SUD scale. Trust your gut.</span></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div class="step-circle">2</div>
+              <div><strong style="color:var(--teal-dark);">Setup Statement</strong><br/><span style="font-size:0.875rem;color:var(--text-mid);">Say it 3× while tapping the Side of Hand point. The first part names the truth; the second offers self-acceptance.</span></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div class="step-circle">3</div>
+              <div><strong style="color:var(--teal-dark);">Tap the 8 Points</strong><br/><span style="font-size:0.875rem;color:var(--text-mid);">Say a short reminder phrase at each point (one round). Stay with the feeling.</span></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div class="step-circle">4</div>
+              <div><strong style="color:var(--teal-dark);">Breathe &amp; Re-Rate</strong><br/><span style="font-size:0.875rem;color:var(--text-mid);">Take a breath. Rate your distress again 0–10.</span></div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <div class="step-circle">5</div>
+              <div><strong style="color:var(--teal-dark);">Repeat</strong><br/><span style="font-size:0.875rem;color:var(--text-mid);">Keep tapping rounds until SUD reaches 0 or 1.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tapping Points -->
+        <h2 style="margin:2rem 0 1rem;">The Tapping Points</h2>
+        <p>Tap with two fingers (index + middle) with firm but comfortable pressure. You don't need to count — tap for as long as it takes to say your phrase at each point.</p>
+        <img src="../tapping-points.png" alt="The Tapping Points diagram" style="width:100%;border-radius:12px;border:1px solid var(--circle);margin:1rem 0;" />
+
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;">
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">1</span>
+            <strong>Top of Head</strong><span style="color:var(--text-mid);">Crown — centre of the head</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">2</span>
+            <strong>Middle of Eyebrow</strong><span style="color:var(--text-mid);">Inner edge, where brow begins</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">3</span>
+            <strong>Side of Eye</strong><span style="color:var(--text-mid);">Outer corner, on the bone</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">4</span>
+            <strong>Under Eye</strong><span style="color:var(--text-mid);">On the cheekbone, below pupil</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">5</span>
+            <strong>Under Nose</strong><span style="color:var(--text-mid);">Philtrum — between nose &amp; lip</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">6</span>
+            <strong>Chin</strong><span style="color:var(--text-mid);">Crease between lip &amp; chin</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--circle);font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">7</span>
+            <strong>Collarbone</strong><span style="color:var(--text-mid);">Just below collarbone, either side</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2rem 1fr 1fr;gap:0.5rem;align-items:center;padding:0.6rem 0;font-size:0.875rem;">
+            <span style="background:var(--teal);color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;">8</span>
+            <strong>Under Arm</strong><span style="color:var(--text-mid);">About 4 inches below armpit</span>
+          </div>
+        </div>
+
+        <!-- Tapping Scripts -->
+        <h2 style="margin:2.5rem 0 0.5rem;">Teacher-Specific Tapping Scripts</h2>
+        <p style="margin-bottom:1.5rem;">Tapping works best when the words match <em>your</em> experience. Use these as starting points — adapt freely to what feels true for you.</p>
+
+        <div class="script-card">
+          <h4>📋 Workload Overwhelm</h4>
+          <p class="setup">"Even though there is too much to do and I don't know how I'll get through it, I accept how overwhelmed I feel right now."</p>
+          <p class="points"><strong>Eyebrow:</strong> "All this pressure" · <strong>Side of Eye:</strong> "Too much to do" · <strong>Under Eye:</strong> "My mind won't slow down" · <strong>Collarbone:</strong> "Tight chest" · <strong>Head:</strong> "All this overwhelm"</p>
+        </div>
+
+        <div class="script-card">
+          <h4>👁️ Observation / Inspection Anxiety</h4>
+          <p class="setup">"Even though I feel sick with anxiety about being observed and judged, I accept this is how I feel right now."</p>
+          <p class="points"><strong>Eyebrow:</strong> "This dread" · <strong>Side of Eye:</strong> "Fear of being judged" · <strong>Nose:</strong> "What if it goes wrong?" · <strong>Under Arm:</strong> "Carrying this pressure" · <strong>Head:</strong> "This anticipation"</p>
+        </div>
+
+        <div class="script-card">
+          <h4>💔 Compassion Fatigue</h4>
+          <p class="setup">"Even though I'm exhausted from absorbing everyone else's stress and there's no space left for me, I accept how depleted I feel."</p>
+          <p class="points"><strong>Eyebrow:</strong> "This exhaustion" · <strong>Eye:</strong> "No time for me" · <strong>Chin:</strong> "This emotional load" · <strong>Collarbone:</strong> "Carrying everyone" · <strong>Head:</strong> "All this depletion"</p>
+        </div>
+
+        <div class="script-card">
+          <h4>🌙 Can't Switch Off at Night</h4>
+          <p class="setup">"Even though my mind keeps replaying today and I can't rest even though I'm exhausted, I accept this stress response in my body."</p>
+          <p class="points"><strong>Eyebrow:</strong> "Racing mind" · <strong>Eye:</strong> "Can't switch off" · <strong>Nose:</strong> "Still on alert" · <strong>Collarbone:</strong> "Wired but tired" · <strong>Head:</strong> "Holding onto the day"</p>
+        </div>
+
+        <!-- 3 Ways in School -->
+        <h2 style="margin:2.5rem 0 1rem;">3 Ways to Use Tapping in School</h2>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;background:white;border:1px solid var(--circle);border-radius:12px;padding:1.2rem;">
+            <span style="font-size:1.5rem;">🎯</span>
+            <div><strong style="color:var(--teal-dark);">In the moment</strong><p style="font-size:0.875rem;margin:0.3rem 0 0;color:var(--text-mid);">Tap on body sensations only (tight chest, jaw, stomach) to bring immediate calm before a lesson or meeting. No words needed.</p></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;background:white;border:1px solid var(--circle);border-radius:12px;padding:1.2rem;">
+            <span style="font-size:1.5rem;">🌬️</span>
+            <div><strong style="color:var(--teal-dark);">Tap and breathe</strong><p style="font-size:0.875rem;margin:0.3rem 0 0;color:var(--text-mid);">Tap each point while just saying "breathe" or "relax". Introduces physiological calm quickly — great for breaks between lessons.</p></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;background:white;border:1px solid var(--circle);border-radius:12px;padding:1.2rem;">
+            <span style="font-size:1.5rem;">🔍</span>
+            <div><strong style="color:var(--teal-dark);">Explore the pattern</strong><p style="font-size:0.875rem;margin:0.3rem 0 0;color:var(--text-mid);">Use tapping to understand why certain situations trigger a stress response. Explore earlier memories where you first learnt this pattern.</p></div>
+          </div>
+        </div>
+
+        <!-- Using EFT with Students -->
+        <h2 style="margin:2.5rem 0 1rem;">Using EFT to Support Students</h2>
+        <p>EFT is being welcomed into schools globally because it can be learned by everyone — including children — due to its gentle, non-invasive approach.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.2rem 0;">
+          <div style="background:white;border:1px solid var(--circle);border-radius:10px;padding:1rem;">
+            <h4 style="font-size:0.875rem;color:var(--teal-dark);margin-bottom:0.75rem;">🏫 In the Classroom</h4>
+            <ul style="font-size:0.8rem;color:var(--text-mid);line-height:2;padding-left:1rem;">
+              <li>Brief "tap and breathe" as a class settling routine</li>
+              <li>Before tests or presentations to reduce anxiety</li>
+              <li>After conflict to help students regulate</li>
+              <li>Mindful moment — tap on "I feel nervous" openly</li>
+            </ul>
+          </div>
+          <div style="background:white;border:1px solid var(--circle);border-radius:10px;padding:1rem;">
+            <h4 style="font-size:0.875rem;color:var(--teal-dark);margin-bottom:0.75rem;">👤 With Individual Students</h4>
+            <ul style="font-size:0.8rem;color:var(--text-mid);line-height:2;padding-left:1rem;">
+              <li>Teach the points as a self-regulation tool</li>
+              <li>For exam anxiety: "Even though I'm terrified of this test..."</li>
+              <li>Social stress, friendship difficulties, belonging fears</li>
+              <li>After upsetting incidents before returning to learning</li>
+            </ul>
+          </div>
+          <div style="background:white;border:1px solid var(--circle);border-radius:10px;padding:1rem;">
+            <h4 style="font-size:0.875rem;color:var(--teal-dark);margin-bottom:0.75rem;">🗣️ Age-Appropriate Language</h4>
+            <ul style="font-size:0.8rem;color:var(--text-mid);line-height:2;padding-left:1rem;">
+              <li>Young children: "the worry spots" or "the calm-down taps"</li>
+              <li>Teens: frame as brain science — "we're telling your amygdala it's safe"</li>
+              <li>Normalise it — "let's all do it together"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="warning-box" style="margin-top:1.5rem;">
+          <h4 style="color:#8a6d00;margin-bottom:0.75rem;font-size:0.95rem;">Important Boundaries</h4>
+          <ul>
+            <li>EFT for students is supportive self-regulation, not therapy</li>
+            <li>Never pressure a student to tap on traumatic material alone</li>
+            <li>Refer to SENCO/pastoral lead for complex emotional needs</li>
+            <li>Always obtain appropriate consent and follow school safeguarding policy</li>
+          </ul>
+        </div>
+
+        <!-- Common Questions -->
+        <h2 style="margin:2.5rem 0 1rem;">Common Questions</h2>
+        <div class="faq-item">
+          <h4>Does it have to be perfect?</h4>
+          <p>No. There is no "wrong" EFT. Your intention matters most. Research shows benefit even when tapping varies from protocol.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if stress comes back?</h4>
+          <p>Very common — not a failure. Stress has layers. View tapping as a practice, not a one-off fix. Each round sends a safety signal.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I feel emotional?</h4>
+          <p>Keep tapping. Slow your breathing. Emotional release is normal — it means the stress response is softening. You can also shift to: "Right now I am safe."</p>
+        </div>
+        <div class="faq-item">
+          <h4>I don't know why I'm stressed.</h4>
+          <p>EFT works even when stress is vague. Try: "This unknown tension" or "My body feels on edge and I don't know why." Clarity often comes after.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I tap discreetly?</h4>
+          <p>Yes. In a staffroom or meeting, tap on collar, hand, or knee points. Even one point with a breath can help. Use what's available.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How often should I tap?</h4>
+          <p>Consistency matters more than duration. 5–10 minutes daily is ideal. Even a brief "tap and breathe" each day keeps your system regulated.</p>
+        </div>
+
+        <!-- Attribution -->
+        <div style="background:var(--cream);border:1px solid var(--circle);border-radius:10px;padding:1.2rem;margin-top:2rem;font-size:0.8rem;color:var(--text-light);text-align:center;line-height:1.9;">
+          <p style="margin:0;">EFT content informed by Dr Peta Stapleton's clinical EFT research and the EFT &amp; Mindfulness Centre, UK.<br/>
+          This page is for informational purposes only and is not a substitute for professional psychological or medical advice.<br/>
+          If you are experiencing a mental health crisis, please contact your GP or call <strong>Samaritans: 116 123</strong>.</p>
+        </div>
+
       </div>
 
+      <!-- SIDEBAR -->
       <div class="mobile-unstick" style="position:sticky;top:90px;">
         <div style="background:white;border:1px solid var(--circle);border-radius:16px;padding:2rem;margin-bottom:1.5rem;">
           <h3 style="margin-bottom:1rem;">Support available for:</h3>
           <ul style="list-style:none;color:var(--text-mid);line-height:2.2;">
             <li>✓ Teacher stress and burnout</li>
-            <li>✓ Emotional resilience</li>
+            <li>✓ Workload overwhelm</li>
+            <li>✓ Observation anxiety</li>
+            <li>✓ Compassion fatigue</li>
+            <li>✓ Can't switch off at night</li>
             <li>✓ Classroom wellbeing tools</li>
             <li>✓ Supporting pupil mental health</li>
             <li>✓ CPD presentations</li>
-            <li>✓ Staff wellbeing sessions</li>
-            <li>✓ Work-life balance</li>
           </ul>
         </div>
-        <div style="background:var(--teal);color:white;border-radius:16px;padding:2rem;text-align:center;">
+
+        <div style="background:var(--teal);color:white;border-radius:16px;padding:2rem;text-align:center;margin-bottom:1.5rem;">
           <h3 style="color:white;margin-bottom:0.75rem;">Seen a presentation?</h3>
           <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:1.5rem;">Get in touch to receive your handout, find out more, or join the teacher mailing list.</p>
           <a href="../contact.html" style="background:white;color:var(--teal-dark);padding:0.75rem 1.5rem;border-radius:30px;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;display:inline-block;">Get in Touch</a>
         </div>
+
+        <div style="background:var(--cream);border:1px solid var(--circle);border-radius:16px;padding:1.5rem;text-align:center;">
+          <h3 style="margin-bottom:0.75rem;font-size:1.1rem;">Book a 1:1 Session</h3>
+          <p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:1.2rem;">Individual EFT or RTT sessions tailored specifically to the pressures of teaching.</p>
+          <a href="../contact.html" class="btn-primary" style="font-size:0.8rem;">Book a Discovery Call</a>
+        </div>
       </div>
+
     </div>
   </section>
+
+  <!-- CTA -->
   <div class="cta-band" style="background:linear-gradient(135deg,var(--teal-dark),var(--teal));text-align:center;padding:4rem 2rem;">
     <div class="container">
       <h2 style="color:white;margin-bottom:1rem;">Ready to take the first step?</h2>
@@ -139,6 +454,7 @@
       <a href="../contact.html" class="btn-primary" style="background:white;color:var(--teal-dark);">Get in Touch</a>
     </div>
   </div>
+
   <footer>
     <div class="container">
       <div class="footer-inner">
@@ -179,70 +495,28 @@
       </div>
     </div>
   </footer>
+
   <script src="../main.js"></script>
 
-  <!-- ── COOKIE BANNER ── -->
-  <div id="cookie-banner" style="
-    display:none;
-    position:fixed;
-    bottom:0;left:0;right:0;
-    z-index:9999;
-    background:#f5f0e8;
-    border-top:2px solid #B8D4C0;
-    padding:1.2rem 2rem;
-    box-shadow:0 -4px 24px rgba(58,138,154,0.1);
-    font-family:'Jost',sans-serif;
-  ">
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#f5f0e8;border-top:2px solid #B8D4C0;padding:1.2rem 2rem;box-shadow:0 -4px 24px rgba(58,138,154,0.1);font-family:'Jost',sans-serif;">
     <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
-      <p style="margin:0;font-size:0.85rem;color:#5A6B65;max-width:680px;line-height:1.6;">
-        This website uses cookies to ensure you get the best experience. We do not use advertising or tracking cookies. By clicking <strong>Accept</strong> you agree to our use of essential cookies.
-        <a href="../privacy.html" style="color:#3A8A9A;text-decoration:underline;">Read our Privacy Policy</a>.
-      </p>
+      <p style="margin:0;font-size:0.85rem;color:#5A6B65;max-width:680px;line-height:1.6;">This website uses cookies to ensure you get the best experience. We do not use advertising or tracking cookies. By clicking <strong>Accept</strong> you agree to our use of essential cookies. <a href="../privacy.html" style="color:#3A8A9A;text-decoration:underline;">Read our Privacy Policy</a>.</p>
       <div style="display:flex;gap:0.75rem;flex-shrink:0;">
-        <button id="cookie-decline" style="
-          background:transparent;
-          color:#5A6B65;
-          border:1px solid #B8D4C0;
-          padding:0.55rem 1.2rem;
-          border-radius:30px;
-          font-size:0.8rem;
-          letter-spacing:0.06em;
-          text-transform:uppercase;
-          cursor:pointer;
-          font-family:'Jost',sans-serif;
-        ">Decline</button>
-        <button id="cookie-accept" style="
-          background:#3A8A9A;
-          color:white;
-          border:none;
-          padding:0.55rem 1.4rem;
-          border-radius:30px;
-          font-size:0.8rem;
-          letter-spacing:0.06em;
-          text-transform:uppercase;
-          cursor:pointer;
-          font-family:'Jost',sans-serif;
-        ">Accept</button>
+        <button id="cookie-decline" style="background:transparent;color:#5A6B65;border:1px solid #B8D4C0;padding:0.55rem 1.2rem;border-radius:30px;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;">Decline</button>
+        <button id="cookie-accept" style="background:#3A8A9A;color:white;border:none;padding:0.55rem 1.4rem;border-radius:30px;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;">Accept</button>
       </div>
     </div>
   </div>
-
   <script>
     (function() {
       var banner = document.getElementById('cookie-banner');
       var consent = localStorage.getItem('tiw-cookie-consent');
-      if (!consent) {
-        banner.style.display = 'block';
-      }
-      document.getElementById('cookie-accept').addEventListener('click', function() {
-        localStorage.setItem('tiw-cookie-consent', 'accepted');
-        banner.style.display = 'none';
-      });
-      document.getElementById('cookie-decline').addEventListener('click', function() {
-        localStorage.setItem('tiw-cookie-consent', 'declined');
-        banner.style.display = 'none';
-      });
+      if (!consent) { banner.style.display = 'block'; }
+      document.getElementById('cookie-accept').addEventListener('click', function() { localStorage.setItem('tiw-cookie-consent', 'accepted'); banner.style.display = 'none'; });
+      document.getElementById('cookie-decline').addEventListener('click', function() { localStorage.setItem('tiw-cookie-consent', 'declined'); banner.style.display = 'none'; });
     })();
   </script>
+
 </body>
 </html>
