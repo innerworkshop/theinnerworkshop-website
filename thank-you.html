@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — The Inner Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #3A8A9A;
+      --teal-dark: #2C6E7A;
+      --cream: #F5F0E8;
+      --text-dark: #2C4A47;
+      --text-mid: #4A6360;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(44,110,122,0.10);
+    }
+    .icon { font-size: 3rem; margin-bottom: 1rem; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--teal-dark);
+      margin-bottom: 1rem;
+    }
+    p {
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    a.btn {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      text-decoration: none;
+      padding: 0.85rem 2.5rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    a.btn:hover { background: var(--teal-dark); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🌿</div>
+    <h1>Thank You</h1>
+    <p>Your message has been received. I'll be in touch with you soon.</p>
+    <p>In the meantime, feel free to explore the website or take a moment to breathe. 💚</p>
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>
