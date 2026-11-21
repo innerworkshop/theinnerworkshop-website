@@ -268,6 +268,150 @@
       }
       section { padding: 2rem 0 !important; }
     }
+
+    /* ── Downloads ─────────────────────────────── */
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .download-card {
+      background: white;
+      border: 1px solid var(--circle);
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 2px 12px rgba(42,107,120,0.06);
+      transition: box-shadow 0.3s;
+    }
+    .download-card:hover { box-shadow: 0 6px 24px rgba(42,107,120,0.13); }
+    .download-icon {
+      width: 52px; height: 52px;
+      background: rgba(184,212,192,0.25);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .download-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--teal-dark);
+      margin-bottom: 0.4rem;
+    }
+    .download-text p { margin: 0; font-size: 0.92rem; }
+    .btn-download {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+    .btn-download:hover { background: var(--teal-dark); color: white; }
+
+    /* ── Mailing list ───────────────────────────── */
+    .mailing-section {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .mailing-inner { max-width: 540px; margin: 0 auto; }
+    .mailing-heading {
+      color: white !important;
+      margin-bottom: 0.6rem;
+    }
+    .mailing-desc { color: rgba(255,255,255,0.88); margin-bottom: 1.5rem; }
+    .mailing-form { }
+    .mailing-fields {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .mailing-input {
+      padding: 0.65rem 1.1rem;
+      border-radius: 30px;
+      border: none;
+      font-size: 0.9rem;
+      flex: 1;
+      min-width: 150px;
+      outline: none;
+      font-family: 'Jost', sans-serif;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-dark);
+    }
+    .mailing-btn {
+      background: white;
+      color: var(--teal-dark);
+      border: none;
+      padding: 0.65rem 1.6rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+      white-space: nowrap;
+    }
+    .mailing-btn:hover { background: var(--cream); }
+    .mailing-small { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin: 0; }
+
+    /* ── Card gallery ─────────────────────────────── */
+    .card-gallery-intro {
+      margin-bottom: 1.5rem;
+      color: var(--muted, #5a6a65);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .card-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .card-thumb {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(42,107,120,0.12);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: white;
+    }
+    .card-thumb:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(42,107,120,0.18);
+    }
+    .card-thumb img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .downloads-grid { grid-template-columns: 1fr; }
+      .mailing-fields { flex-direction: column; align-items: stretch; }
+      .mailing-btn { width: 100%; }
+      .card-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .card-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+    }
+
   </style>
 </head>
 
@@ -401,13 +545,96 @@
           <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
         </svg>
       </div>
-      <div>
-        <strong style="color:var(--teal-dark);">Guided Tapping Audio</strong>
-        <p>Free guided audio will be available here when the book launches. Sign up below to be notified.</p>
+      <div style="flex:1;">
+        <strong style="color:var(--teal-dark);">Sarah Reads Tap, Tap, Little Worry</strong>
+        <p style="margin-bottom:0.75rem;">Listen to Sarah read the full story aloud — perfect for settling time, circle time, or bedtime.</p>
+        <audio controls style="width:100%;max-width:480px;accent-color:var(--teal);">
+          <source src="tap-tap-little-worry-read-aloud.mp3" type="audio/mpeg">
+          Your browser does not support the audio player.
+        </audio>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-mid);">🎙️ Audio coming soon — sign up below to be notified when it's ready.</p>
       </div>
     </div>
 
-    <!-- ── TAPPING FOR TEACHERS ────────────────────── -->
+    
+    <!-- ── FREE DOWNLOADS ─────────────────────────────── -->
+    <div class="section-divider"><span>Free Downloads</span></div>
+
+    <div class="downloads-grid">
+
+      <div class="download-card">
+        <div class="download-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/>
+          </svg>
+        </div>
+        <div class="download-text">
+          <strong>The Nine Tapping Points Poster</strong>
+          <p>A colourful A4 poster showing all nine EFT tapping points, illustrated with animals from the book. Perfect for classroom walls, therapy rooms or home.</p>
+        </div>
+        <a class="btn-download" href="Tap-Tap-Little-Worry-Tapping-Points-Poster-A4.pdf" download>
+          Download Poster (A4)
+        </a>
+      </div>
+
+      <div class="download-card">
+        <div class="download-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/>
+          </svg>
+        </div>
+        <div class="download-text">
+          <strong>Nine Friends Animal Cards</strong>
+          <p>Nine printable cards &mdash; one for each tapping point animal. Children can colour them in, keep them in their pocket, or use them as a visual guide during tapping.</p>
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <a class="btn-download" href="Nine-Friends-Cards-A5.pdf" download>
+            Download A5
+          </a>
+          <a class="btn-download" href="Nine-Friends-Cards-A4-print.pdf" download style="background:transparent;color:var(--teal);border:1.5px solid var(--teal);">
+            Print A4 (2-up)
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── CARD GALLERY ──────────────────────────────────── -->
+    <div class="section-divider"><span>The Nine Friends Cards</span></div>
+
+    <p class="card-gallery-intro">Each card shows one of the nine tapping point animals with its name and tapping location clearly labelled. Print the set and cut them out — children can keep them as pocket reminders, use them as a visual guide during tapping, or colour them in.</p>
+
+    <div class="card-gallery">
+      <div class="card-thumb"><img src="card_thumb_1.jpg" alt="Woodpecker — Side of the hand" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_2.jpg" alt="Owl — Between the eyebrows" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_3.jpg" alt="Badger — Outer corner of the eye" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_4.jpg" alt="Dormouse — Under the eye" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_5.jpg" alt="Rabbit — Under the nose" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_6.jpg" alt="Fox — Chin" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_7.jpg" alt="Robin — Chest" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_8.jpg" alt="Hedgehog — Under the arm" loading="lazy"></div>
+      <div class="card-thumb"><img src="card_thumb_9.jpg" alt="Deer — Top of the head" loading="lazy"></div>
+    </div>
+
+    <!-- ── MAILING LIST ─────────────────────────────────── -->
+    <div class="mailing-section">
+      <div class="mailing-inner">
+        <h2 class="mailing-heading">Stay in the loop</h2>
+        <p class="mailing-desc">Sign up to hear when the guided audio is ready, receive new classroom resources, and get gentle updates from The Inner Workshop.</p>
+        <form action="https://app.kit.com/forms/9973840/subscriptions" method="post" data-sv-form="9973840" data-uid="8ce83b7b6c" data-format="inline" data-version="5" class="mailing-form">
+          <div class="mailing-fields">
+            <input type="text" name="fields[first_name]" placeholder="First name" aria-label="First name" class="mailing-input" />
+            <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" required class="mailing-input" />
+            <button type="submit" class="mailing-btn">Join the list</button>
+          </div>
+          <p class="mailing-small">No spam, ever. Unsubscribe any time.</p>
+        </form>
+      </div>
+    </div>
+
+<!-- ── TAPPING FOR TEACHERS ────────────────────── -->
     <div class="section-divider"><span>For Teachers &amp; Schools</span></div>
 
     <div class="teachers-card">
