@@ -767,7 +767,6 @@
       _gateFile = file;
       var modal = document.getElementById('email-gate');
       modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
       // Reset to form state in case previously used
       document.getElementById('gate-form').style.display = '';
       document.getElementById('gate-success').style.display = 'none';
@@ -775,7 +774,6 @@
 
     function closeGate() {
       document.getElementById('email-gate').style.display = 'none';
-      document.body.style.overflow = '';
     }
 
     function bypassGate(e) {
@@ -787,33 +785,33 @@
     function triggerDownload(file) {
       var a = document.createElement('a');
       a.href = file;
-      a.download = file;
+      a.setAttribute('download', '');
       document.body.appendChild(a);
       a.click();
-      document.body.removeChild(a);
+      setTimeout(function() { document.body.removeChild(a); }, 100);
     }
 
     // Intercept Kit form submit
     document.getElementById('gate-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      var form = this;
-      var data = new FormData(form);
-      fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' });
-
+      var data = new FormData(this);
+      fetch(this.action, { method: 'POST', body: data, mode: 'no-cors' }).catch(function(){});
       // Show success and trigger download
-      form.style.display = 'none';
+      this.style.display = 'none';
       document.getElementById('gate-success').style.display = '';
       triggerDownload(_gateFile);
     });
 
-    // Close on backdrop click
+    // Close on backdrop click (only when clicking the dark overlay itself)
     document.getElementById('email-gate').addEventListener('click', function(e) {
       if (e.target === this) closeGate();
     });
 
-    // Close on Escape
+    // Close on Escape (scoped — only when modal is visible)
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeGate();
+      if (e.key === 'Escape' && document.getElementById('email-gate').style.display === 'flex') {
+        closeGate();
+      }
     });
   </script>
 
